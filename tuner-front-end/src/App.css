@@ -21,3 +21,16 @@
 .retrowave {
   height: 130px;
 }
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Home {
+  padding: 50px;
+}
+.Home h1{
+  margin-bottom: 50px;
+}
