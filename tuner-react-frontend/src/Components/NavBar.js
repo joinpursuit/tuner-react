@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
+import React from 'react'
 
-export default function NavBar() {
+function NavBar() {
   return (
-    <nav>
-      <h1>
-        <Link to="/bookmarks">Bookmarks</Link>
-      </h1>
-      <button>
-        <Link to="/bookmarks/new">New Bookmark</Link>
-      </button>
-    </nav>
-  );
+    <div>
+      NAVBAR
+    </div>
+  )
 }
+
+export default NavBar

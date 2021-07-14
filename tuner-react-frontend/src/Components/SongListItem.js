@@ -1,25 +1,12 @@
-import { Link } from "react-router-dom";
+import React from 'react'
+import {useEffect } from "react"
+function SongListItem() {
 
-function BookmarkListItem({ bookmark }) {
   return (
-    <tr>
-      <td>
-        {bookmark.is_favorite ? (
-          <span>⭐️</span>
-        ) : (
-          <span>&nbsp; &nbsp; &nbsp;</span>
-        )}
-      </td>
-      <td>
-        <a href={bookmark.url} target="_blank" rel="noreferrer">
-          {bookmark.name}
-        </a>
-      </td>
-      <td>
-        <Link to={`/bookmarks/${bookmark.id}`}>✏️</Link>
-      </td>
-    </tr>
-  );
+    <div>
+      SongListItem
+    </div>
+  )
 }
 
-export default BookmarkListItem;
+export default SongListItem
