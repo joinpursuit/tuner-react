@@ -30,6 +30,7 @@ export default function Songs() {
                     <th>Artist</th>
                     <th>Album</th>
                     <th>Time</th>
+                    <th>Update</th>
                 </tr>
             </thead>
             {songs.map((song) => {

@@ -15,6 +15,9 @@ export default function NavBar() {
             <span>
                 <Link to='/songs'>Index</Link>
             </span>
+            <span>
+                <Link to='/songs/new'>New</Link>
+            </span>
         </nav>
     )
 }

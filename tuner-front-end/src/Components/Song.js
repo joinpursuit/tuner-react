@@ -1,10 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import cassette from '../Images/cassette.png'
 
 
 export default function Song({song}) {
 
-    // (<span>⭐️</span>)
 
     return (
         <tbody>
@@ -14,6 +14,7 @@ export default function Song({song}) {
             <td>{song.artist}</td>
             <td>{song.album}</td>
             <td>{song.time}</td>
+            <td><Link to={`/songs/${song.id}`}><button>!</button></Link></td>
         </tr>
         </tbody>
     )

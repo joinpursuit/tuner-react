@@ -1,0 +1,12 @@
+.New {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.New form{}
+input {
+    display: block;
+}
+input[type="checkbox"] {
+    display: inline;
+}

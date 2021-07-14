@@ -8,6 +8,8 @@ import NavBar from './NavBar'
 import Home from './Pages/Home'
 import Index from './Pages/Index'
 import Show from './Pages/Show'
+import New from './Pages/New'
+
 
 function App() {
 
@@ -18,7 +20,8 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/songs' component={Index} />
-          <Route path='/songs/:id' component={Show} />
+          <Route path='/songs/new' component={New} />
+          <Route exact path='/songs/:id' component={Show} />
         </Switch>
       </main>
     </div>
