@@ -1,8 +1,10 @@
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import NavBar from './Components/NavBar';
-import Home from './Pages/Home';
-import Index from './Pages';
+import NavBar from './Components/NavBar.js';
+import Home from './Pages/Home.js';
+import Index from './Pages/Index.js';
+import Show from './Pages/Show.js';
+
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
             </Route>
             <Route exact path="/songs">
               <Index />
+            </Route>
+            <Route exact path="/songs/:id">
+              <Show />
             </Route>
           </Switch>
         </main>
