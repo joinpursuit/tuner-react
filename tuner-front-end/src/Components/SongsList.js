@@ -33,7 +33,7 @@ function SongsList() {
           </thead>
           <tbody>
             {songs.map((song) => {
-              return <SongListItem key={song.name} song={song} />;
+              return <SongListItem key={song.id} song={song} />;
             })}
           </tbody>
         </table>

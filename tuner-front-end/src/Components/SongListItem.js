@@ -12,7 +12,10 @@ function SongListItem({ song }) {
         )}
       </td>
       <td>
-        <Link to={`/songs/${song.name}`}>{song.name}</Link>
+          {song.name}
+          </td>
+            <td>
+        <Link to={`/songs/${song.id}`}>{song.name}</Link>
       </td>
     </tr>
   );
