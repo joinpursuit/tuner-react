@@ -26,9 +26,11 @@ function SongsList() {
         <table>
           <thead>
             <tr>
-              <th></th>
-              <th>Take me there</th>
-              <th>See this song</th>
+              <th>Fav</th>
+              <th>Name</th>
+              <th>Artist</th>
+              <th>Album</th>
+              <th>Time</th>
             </tr>
           </thead>
           <tbody>

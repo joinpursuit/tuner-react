@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SongsList from "./SongsList";
 
 
 function SongListItem({ song }) {
@@ -11,12 +12,18 @@ function SongListItem({ song }) {
           <span>&nbsp; &nbsp; &nbsp;</span>
         )}
       </td>
-      <td>
-          {song.name}
-          </td>
             <td>
         <Link to={`/songs/${song.id}`}>{song.name}</Link>
       </td>
+      <td>
+          {song.artist}
+          </td>
+      <td>
+          {song.album}
+          </td>
+      <td>
+          {song.time}
+          </td>
     </tr>
   );
 }

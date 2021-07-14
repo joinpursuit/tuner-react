@@ -17,6 +17,10 @@ function SongDetails() {
     }
   }
 
+  const handleGoBack = () =>{
+    history.push('/songs')
+  }
+
   useEffect(() => {
     const fetchSong = async ()=> {
     try {
@@ -36,8 +40,14 @@ function SongDetails() {
 
   return (
     <article>
+      <p>{song.is_favorite}</p>
       <p>{song.name}</p>
+      <p>{song.artist}</p>
+      <p>{song.album}</p>
+      <p>{song.time}</p>
+      <button onClick={handleGoBack}>Back</button>
       <button onClick={handleDelete}>Delete</button>
+
     </article>
   );
 }
