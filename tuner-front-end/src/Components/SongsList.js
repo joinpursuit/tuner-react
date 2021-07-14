@@ -8,13 +8,16 @@ const API = apiURL();
 function SongsList() {
   const [songs, setSongs] = useState([]);
   
-  useEffect(async () => {
+  useEffect(() => {
+    const fetchSongs = async () => {
     try {
       const res = await axios.get(`${API}/songs`);
       setSongs(res.data.payload);
     } catch (err) {
       console.log(err);
     }
+    }
+    fetchSongs()
   }, []);
   
   return (
@@ -30,7 +33,7 @@ function SongsList() {
           </thead>
           <tbody>
             {songs.map((song) => {
-              return <SongListItem key={song.id} song={song} />;
+              return <SongListItem key={song.name} song={song} />;
             })}
           </tbody>
         </table>

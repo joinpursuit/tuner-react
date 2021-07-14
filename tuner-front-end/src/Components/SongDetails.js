@@ -17,13 +17,16 @@ function SongDetails() {
     }
   }
 
-  useEffect(async () => {
+  useEffect(() => {
+    const fetchSong = async ()=> {
     try {
       const result = await axios.get(`${API}/songs/${id}`);
       setSong(result.data.payload);
     } catch (err) {
       console.log(err);
     }
+  } 
+  fetchSong();
   }, [id]);
   
   const handleDelete = async () => {

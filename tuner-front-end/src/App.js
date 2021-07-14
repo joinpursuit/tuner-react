@@ -1,12 +1,12 @@
 // DEPENDENCIES
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { songs } from './Components/SongsList'
+// import { songs } from './Components/SongsList'
 
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
 import SongDetails from "./Components/SongDetails";
-import SongListItem from "./Components/SongListItem";
+// import SongListItem from "./Components/SongListItem";
 import SongNew from "./Components/SongNew";
 import SongsList from "./Components/SongsList";
 
@@ -25,7 +25,7 @@ function App() {
               <SongNew />
             </Route>
             <Route exact path="/songs/:id">
-              <SongListItem songs={songs} />
+              <SongDetails />
             </Route>
             {/* <Route path="*">
               <FourOFour />
