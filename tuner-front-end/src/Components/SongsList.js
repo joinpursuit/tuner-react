@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { apiURL } from "../util/apiURL.js";
+import { apiURL } from '../util/apiURL'
 import SongListItem from "./SongListItem";
 
 const API = apiURL();
 
 function SongsList() {
-  const [songs, setSong] = useState([]);
+  const [songs, setSongs] = useState([]);
   
   useEffect(async () => {
     try {

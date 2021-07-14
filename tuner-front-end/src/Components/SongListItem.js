@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 function SongListItem({ song }) {
   return (
     <tr>
@@ -11,7 +12,7 @@ function SongListItem({ song }) {
         )}
       </td>
       <td>
-        <Link to={`/songs/${song.id}`}>{song.name}</Link>
+        <Link to={`/songs/${song.name}`}>{song.name}</Link>
       </td>
     </tr>
   );

@@ -76,7 +76,7 @@ function SongNew() {
           name="time"
           value={song.time}
           placeholder="time"
-          onChange={handleNumberChange}
+          onChange={handleTextChange}
         />
         <label htmlFor="is_favorite">Favorite:</label>
         <input

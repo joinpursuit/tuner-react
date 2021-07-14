@@ -1,44 +1,35 @@
 // DEPENDENCIES
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { songs }
 
-// PAGES
-import Edit from "./Pages/Edit";
-import FourOFour from "./Pages/FourOFour";
-import Home from "./Pages/Home";
-import Index from "./Pages/Index";
-import New from "./Pages/New";
-import Show from "./Pages/Show";
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
+import SongDetails from "./Components/SongDetails";
+import SongListItem from "./Components/SongListItem";
+import SongNew from "./Components/SongNew";
+import SongsList from "./Components/SongsList";
 
 function App() {
-  const [songs, setSongs] = useState([]);
-
+  // const [songs, setSongs] = useState([]);
   return (
     <div className="App">
       <Router>
         <NavBar />
         <main>
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
             <Route exact path="/songs">
-              <Index />
+              <SongsList />
             </Route>
             <Route path="/songs/new">
-              <New />
+              <SongNew />
             </Route>
             <Route exact path="/songs/:id">
-              <Show />
+              <SongListItem />
             </Route>
-            <Route path="/songs/:id/edit">
-              <Edit />
-            </Route>
-            <Route path="*">
+            {/* <Route path="*">
               <FourOFour />
-            </Route>
+            </Route> */}
           </Switch>
         </main>
       </Router>
