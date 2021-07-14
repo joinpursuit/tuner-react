@@ -8,4 +8,8 @@
 table {
     width: 80%;
     border: 1px solid black;
+    font-size: 18px;
+}
+table td {
+    text-align: center;
 }

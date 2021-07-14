@@ -8,7 +8,6 @@ export default function Songs() {
     const [songs, setSongs] = useState([])
     const API = apiURL()
     console.log(songs)
-    console.log(API)
 
     useEffect(() => {
         axios.get(`${API}/songs`)
@@ -23,7 +22,7 @@ export default function Songs() {
     }, [])
 
     return (
-        <table>
+        <table className='Songs'>
             <thead>
                 <tr>
                     <th>Fav</th>
@@ -33,8 +32,9 @@ export default function Songs() {
                     <th>Time</th>
                 </tr>
             </thead>
-            {/* for each song, return <Song /> */}
-            <Song />
+            {songs.map((song) => {
+                return <Song key={song.id} song={song} />
+            })}
         </table>
     )
 }
