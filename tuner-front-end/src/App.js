@@ -4,9 +4,10 @@ import { Switch, Route } from 'react-router-dom'
 import './App.css';
 
 // Routes
-import NavBar from './NavBar.js'
-import Home from './Pages/Home.js'
-import Index from './Pages/Index.js'
+import NavBar from './NavBar'
+import Home from './Pages/Home'
+import Index from './Pages/Index'
+import Show from './Pages/Show'
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
       <main>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/songs' component={Index} />
+          <Route exact path='/songs' component={Index} />
+          <Route path='/songs/:id' component={Show} />
         </Switch>
       </main>
     </div>

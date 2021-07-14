@@ -15,11 +15,11 @@ export default function Songs() {
             setSongs(response.data)
             },
             (error) => {
-                console.log("Error in <Songs />: ", error)
+                console.log("Error in <Songs /> .then(): ", error)
             }).catch(e => {
-            console.warn("Error: ", e)
+            console.warn("Error in <Songs /> .catch(): ", e)
         })
-    }, [])
+    }, [API])
 
     return (
         <table className='Songs'>

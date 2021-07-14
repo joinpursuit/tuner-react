@@ -2,3 +2,17 @@ body {
   background-color: rgb(208, 163, 214);
   margin: 0;
 }
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+}
+h2 {
+  font-size: 3em;
+}
+h3 {
+  font-size: 2em;
+}
+p {
+  font-size: 2em;
+}
