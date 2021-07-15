@@ -16,10 +16,10 @@ function App() {
           <Route path="/songs/new" >
             <SongNewForm />
           </Route>
-          <Route path="/songs/show/:index">
+          <Route path="/songs/show/:id">
             <SongShow />
           </Route>
-          <Route path="/songs/edit/:index">
+          <Route path="/songs/edit/:id">
             <SongEditForm />
           </Route>
           <Route path="/songs">
