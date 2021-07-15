@@ -35,7 +35,7 @@ const goBack = ()=>{
 
   useEffect(() => {
  fetchSong()
-  }, [id]);
+  }, []);
   
   const handleDelete = async () => {
     await deleteSong();

@@ -40,7 +40,7 @@ h4 {
 }
 
 table {
-  width: 50%;
+  width: 80%;
   margin: auto;
 }
 
@@ -55,6 +55,9 @@ tbody td:not(td:first-of-type):hover {
 
 tbody tr:nth-child(even) {
   background: #f4eafd;
+}
+tbody tr:nth-child(odd) {
+  background: pink;
 }
 
 .New {
