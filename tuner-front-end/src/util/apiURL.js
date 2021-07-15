@@ -3,7 +3,7 @@ const apiURL = () => {
       process.env.NODE_ENV === "development" ||
       process.env.NODE_ENV === "test"
     ) {
-      return "http://localhost:4444";
+      return "http://localhost:3001";
     }
   };
   

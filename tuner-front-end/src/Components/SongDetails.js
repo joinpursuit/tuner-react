@@ -16,9 +16,7 @@ export default function SongDetails() {
     try {
       console.log(id);
       let res = await axios.get(`${API}/songs/${id}`);
-      console.log(res.data.payload);
-      console.log(setSong);
-      setSong(res.data.payload);
+      setSong(res.data);
     } catch (err) {
       console.log(err);
     }

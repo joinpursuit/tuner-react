@@ -14,8 +14,7 @@ export default function Songs() {
   const fetchSongs = async () => {
     try {
       let res = await axios.get(`${API}/songs`);
-      console.log(res.data.payload);
-      setSongsArr(res.data.payload);
+      setSongsArr(res.data);
     } catch (err) {
       console.log(err);
     }

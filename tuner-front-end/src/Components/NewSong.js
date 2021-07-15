@@ -19,18 +19,16 @@ export default function NewSong() {
   const postSong = async (song) => {
     try {
       let res = await axios.post(`${API}/songs`, song);
-      setNewSong((prevNewSong) => [...prevNewSong, res.data]);
+      setNewSong([...newSong, res.data])
+      // setNewSong((prevNewSong) => [...prevNewSong, res.data]);
     } catch (err) {
       console.log(err);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    debugger;
-    console.log(newSong);
-    postSong();
-    setNewSong(newSong);
+   await postSong(newSong);
     history.push("/songs");
   };
 
@@ -38,6 +36,9 @@ export default function NewSong() {
     setNewSong({ ...newSong, [event.target.id]: event.target.value });
   };
 
+const handlenCheckBox = () => {
+  setNewSong({...newSong, is_favorite: !newSong.is_favorite})
+}
 
   return (
     <div>
@@ -48,6 +49,7 @@ export default function NewSong() {
           type="text"
           onChange={handleChange}
           value={newSong.name}
+          placeholder="Name"
         ></input>
         <label htmlFor="artist">Artist: </label>
         <input
@@ -55,6 +57,7 @@ export default function NewSong() {
           type="text"
           onChange={handleChange}
           value={newSong.artist}
+          placeholder="Artist"
         ></input>
         <label htmlFor="album">Album: </label>
         <input
@@ -62,6 +65,7 @@ export default function NewSong() {
           type="text"
           onChange={handleChange}
           value={newSong.album}
+          placeholder="Album"
         ></input>
         <label htmlFor="time">Time: </label>
         <input
@@ -69,9 +73,10 @@ export default function NewSong() {
           type="text"
           onChange={handleChange}
           value={newSong.time}
+          placeholder="Time"
         ></input>
         <label htmlFor="is_favorite">Favorite: </label>
-        <input id="is_favorite" type="checkbox"></input>
+        <input id="is_favorite" type="checkbox" value={newSong.is_favorite} onChange={handlenCheckBox} placeholder="Favorite"></input>
         <button>SUBMIT</button>
       </form>
     </div>
