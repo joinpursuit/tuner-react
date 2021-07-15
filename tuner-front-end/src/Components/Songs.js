@@ -2,7 +2,6 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SongDetails from "./SongDetails";
 
 import apiURL from "../util/apiURL";
 

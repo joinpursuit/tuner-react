@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import NavBar from "./Components/NavBar";
 import Show from "./Pages/Show";
+import New from "./Pages/New";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route exact path="/songs">
             <Index />
+          </Route>
+          <Route exact path="/songs/new">
+            <New />
           </Route>
           <Route exact path="/songs/:id">
             <Show />

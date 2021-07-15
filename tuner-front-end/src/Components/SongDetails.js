@@ -34,8 +34,8 @@ export default function SongDetails() {
   };
 
   const handleDelete = () => {
-      deleteSong(id);
-      history.push("/songs")
+    deleteSong(id);
+    history.push("/songs");
   };
 
   useEffect(() => {
