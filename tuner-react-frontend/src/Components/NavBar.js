@@ -3,9 +3,8 @@ import React from 'react'
 function NavBar() {
   return (
     <div>
-      NAVBAR
+      NAV
     </div>
   )
 }
-
 export default NavBar
