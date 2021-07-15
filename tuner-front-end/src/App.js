@@ -1,17 +1,14 @@
 // DEPENDENCIES
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import { songs } from './Components/SongsList'
-
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
 import SongDetails from "./Components/SongDetails";
-// import SongListItem from "./Components/SongListItem";
 import SongNew from "./Components/SongNew";
 import SongsList from "./Components/SongsList";
+import FourOFour from './Components/4Oh4'
 
 function App() {
-  // const [songs, setSongs] = useState([]);
   return (
     <div className="App">
       <Router>
@@ -27,10 +24,10 @@ function App() {
             <Route exact path="/songs/:id">
               <SongDetails />
             </Route>
-            {/* <Route path="*">
+            <Route path="*">
               <FourOFour />
-            </Route> */}
-          </Switch>
+            </Route>
+          </Switch> 
         </main>
       </Router>
     </div>

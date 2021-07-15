@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import SongsList from "./SongsList";
 
 
 function SongListItem({ song }) {
