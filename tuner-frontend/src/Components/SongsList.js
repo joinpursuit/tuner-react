@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { apiURL } from "../util/apiURL";
+import { Link } from "react-router-dom";
 
 const API = apiURL();
 
@@ -35,6 +36,7 @@ export default function SongsList() {
           );
         })}
       </ul>
+      <button><Link path to= "/songs/new">New Song</Link></button>
     </div>
   );
 }
