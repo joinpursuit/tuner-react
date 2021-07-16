@@ -5,11 +5,13 @@ import SongEditForm from './Components/SongEditForm';
 import SongNewForm from './Components/SongNewForm';
 import SongShow from './Components/SongShow';
 import SongsList from './Components/SongsList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 
 function App() {
   return (
-    <>
+    <div className="fullBoarder">
       <Router>
         <NavBar />
         <Switch>
@@ -28,7 +30,7 @@ function App() {
         </Switch>
       </Router>
 
-    </>
+    </div>
   )
 }
 

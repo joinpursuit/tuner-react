@@ -5,15 +5,16 @@ function SongListItem({ song }) {
   return (
     <tr>
       {/* <h1>SongListItem</h1> */}
-      <td>{song.id}</td>
+      <th scope="row">{song.id}</th>
       <td>
         <Link to={`/songs/show/${song.id}`}>
-          <a href={song.name} target="_blank" rel="noreferrer">
+          
             {song.name}
-          </a>
+           
         </Link>
-      </td>
+      </td >
       <td>{song.album}</td>
+      <td>{song.artist}</td>
       <td>{song.time}</td>
       <td>
         {song.is_favorite ? (

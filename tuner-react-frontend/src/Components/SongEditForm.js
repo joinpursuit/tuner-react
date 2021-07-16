@@ -1,18 +1,17 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, Link, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
+const API = apiURL();
 
 function SongEditForm() {
   let { id } = useParams();
-  console.log(id)
-  // debugger;
   let history = useHistory();
-  const API = apiURL();
- 
+
   const [song, setSong] = useState({
     name: "",
+    artist: "",
     album: "",
     time: "",
     is_favorite: false,
@@ -21,13 +20,14 @@ function SongEditForm() {
   const updateSong = async (updatedSong) => {
     try {
       await axios.put(`${API}/songs/${id}`, updatedSong);
-      history.push(`/songs/${id}`);
+
+      history.push(`/songs`);
     } catch (e) {
       console.log(e);
     }
   };
 
-  const handleChange = (event) => {
+  const handleTextChange = (event) => {
     setSong({ ...song, [event.target.id]: event.target.value });
   };
 
@@ -35,14 +35,19 @@ function SongEditForm() {
     setSong({ ...song, is_favorite: !song.is_favorite });
   };
 
-  useEffect( async () => {
-    try {
-      const res = await axios.get(`${API}/songs/${id}`);
-      setSong(res.data);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    const fetchSong = async () => {
+      try {
+        const res = await axios.get(`${API}/songs/${id}`);
+        setSong(res.data.payload);
+
+      } catch (error) {
+        console.log(error);
+      }
     }
-  },[id, history, API]);
+    fetchSong()
+
+  }, [id]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,43 +57,69 @@ function SongEditForm() {
   return (
     <div>
       <h1>EDIT FORM</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          value={song.name}
-          type="text"
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="album">Album:</label>
-        <input
-          id="album"
-          type="text"
-          required
-          value={song.album}
-          onChange={handleChange}
-        />
-        <label htmlFor="time">Time:</label>
-        <input
-          id="time"
-          type="text"
-          name="time"
-          value={song.time}
-          onChange={handleChange}
-        />
-        <label htmlFor="is_favorite">Favorite:</label>
-        <input
-          id="is_favorite"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={song.is_favorite}
-        />
+      <div className="form-control">
+        <form onSubmit={handleSubmit} >
+          <div className="input-group mb-3">
+            <span className="input-group-text margin-label" htmlFor="name" id="inputGroup-sizing-default">Title </span>
+            <input className="form-control"
+              id="name"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              value={song.name}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="Name"
+              required />
+          </div>
+          <div className="input-group mb-3">
+            <span className="input-group-text margin-label" htmlFor="album" id="inputGroup-sizing-default">album</span>
+            <input className="form-control"
+              id="album"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              value={song.album}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="Description"
+              required />
+          </div>
+          <div className="input-group mb-3">
+            <span className="input-group-text margin-label" htmlFor="artist" id="inputGroup-sizing-default">artist</span>
+            <input className="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              id="artist"
+              value={song.artist}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="Description"
+              required />
+          </div>
+          <div className="input-group mb-3">
+            <span className="input-group-text margin-label" htmlFor="time" id="inputGroup-sizing-default">time</span>
+            <input className="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              id="time"
+              value={song.time}
+              type="text"
+              onChange={handleTextChange}
+              required />
+          </div>
+          <div>
+            <label htmlFor="is_favorite">Favorite:</label>
+            <input
+              id="is_favorite"
+              type="checkbox"
+              onChange={handleCheckboxChange}
+              checked={song.is_favorite}
+            />
+          </div>
+          <button className="btn btn-primary">submit changes</button>
+        </form>
+      </div>
 
-        <br />
 
-        <input type="submit" />
-      </form>
     </div>
   );
 }

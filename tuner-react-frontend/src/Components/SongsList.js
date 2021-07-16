@@ -8,30 +8,35 @@ const API = apiURL();
 function SongsList() {
   const [songs, setSongs] = useState([]);
 
-  useEffect(async () => {
-    try {
-      const res = await axios.get(`${API}/songs`);
-      setSongs(res.data);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    const fetchsongs = async () => {
+      try {
+        const res = await axios.get(`${API}/songs`);
+
+        setSongs(res.data.payload);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  });
+    fetchsongs()
+  }, []);
 
   return (
     <div>
       <h1>SONGS LIST</h1>
-      <table>
+      <table className="table">
         <thead>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Album</th>
-            <th>Time</th>
-            <th>Is Favorite</th>
+          <tr className="table-primary">
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Album</th>
+            <th scope="col">Artist</th>
+            <th scope="col">Time</th>
+            <th scope="col">Is Favorite</th>
           </tr>
         </thead>
         <tbody>
-          {songs.map((song) => {
+          {songs.sort((a, b) => (a.id > b.id) ? 1 : -1).map((song) => {
             return <SongListItem key={song.id} song={song} />;
           })}
         </tbody>

@@ -3,21 +3,16 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-<<<<<<< HEAD
-    <div>
-      NAV
-    </div>
-  )
-}
-export default NavBar
-=======
-    <nav>
-      <h1>Song API</h1>
-      <NavLink to="/songs">Songs</NavLink>
-      <NavLink to="/songs/new">Add New Song</NavLink>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <a className="navbar-brand navMaRGIN" href="/songs">
+        <img src="data:image/png;base64,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" width="60" height="34" alt="" />
+      </a>
+      <NavLink className="nav-item nav-link" to="/songs">Songs</NavLink>
+      <NavLink className="nav-item nav-link" to="/songs/new">Add New Song</NavLink>
     </nav>
+
+
   );
 }
 
 export default NavBar;
->>>>>>> 78fd11cbebdc92e8fd07812c23b6556336488bc0

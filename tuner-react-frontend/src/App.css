@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.fullBoarder{
+  margin: 2vw;
+}
+.navMaRGIN{
+  margin-left:2vw;
+}
