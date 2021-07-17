@@ -37,24 +37,144 @@
   }
 } */
 
+/* NAV */
 .NavBarContainer {
-  background-color: greenyellow;
+  background-color: chocolate;
   display: flex;
+  font-family: "Times New Roman", Times, serif;
   font-size: 21px;
+  color: beige;
   justify-content: space-around;
   margin: 0;
   padding-left: 30px;
 }
 
+.NavBarContainer a:visited {
+  color:beige;
+}
+.NavBarContainer a:hover {
+  color:green;
+}
+
 .NewSongButton {
   height: 60px;
   margin: 20px;
-  background-color: greenyellow;
+  background-color:chocolate;
   border-radius: 40px;
   border: 2px solid black;
   box-shadow: 2px 4px rgba(54, 53, 53, 0.7);
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
-  font-size: 21px;
+  font-size: 27px;
   padding: 12px 15px 15px 15px;
+}
+
+button > a {
+  text-decoration: none;
+}
+
+h1 > a {
+  text-decoration: none;
+}
+
+/* HOME */
+body {
+  background-color: beige;
+}
+
+.Welcome {
+  text-align: center;
+  color: chocolate;
+  font-size: 36px;
+}
+
+.Slogan {
+  text-align: center;
+  font-style: italic;
+  color: chocolate;
+}
+
+.SongsListHeader {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: chocolate;
+}
+
+.SongsListTable {
+  border-collapse: collapse;
+  width: 55vw;
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+}
+
+.SongsListTable thead tr th {
+  color: beige;
+}
+
+.SongsListTable tbody tr td {
+  text-align: center;
+}
+
+.SongsListTable td,
+.SongsListTable th {
+  border: 1px solid chocolate;
+  padding: 8px;
+}
+
+.SongsListTable tr:hover {
+  background-color: #ddd;
+}
+
+.SongsListTable th {
+  text-align: center;
+  background-color: chocolate;
+  color: black;
+}
+
+.SongIdLink {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.SongIdLink > a {
+  text-decoration: none;
+  color: chocolate;
+  font-weight: bold;
+}
+
+.SongIdLink > a:hover {
+  color: green;
+}
+
+/* SHOW and SONG DEETS */
+.Show {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 21px;
+  height: 100%;
+  width: 50%;
+  margin: auto;
+}
+
+.SongDetails h2, p {
+  color: chocolate;
+  font-weight: bold;
+}
+
+.DeleteButton, .EditButton, .GoBackButton {
+  width: 30%;
+  height: 50%;
+  background-color: chocolate;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 2px 4px rgba(54, 53, 53, 0.7);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: beige;
+  text-align: center;
+  margin-right: 3%;
 }

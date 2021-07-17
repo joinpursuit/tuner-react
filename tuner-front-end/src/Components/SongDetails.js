@@ -40,16 +40,20 @@ const SongDetails = () => {
   // }
 
   return (
-    <article>
-      <p>
-        {song.name} {song.artist}
-      </p>
-      <p>
-        {song.album} {song.time}
-      </p>
-      <button onClick={handleDelete}>Delete</button>
-      {/* <button onClick={handleEdit}>Edit</button> */}
-      <Link to={`/songs`}><button>Go Back</button></Link>
+    <article className="SongDetails">
+      <h2>Song Deets</h2>
+      <p>Name: {song.name}</p> <p>Artist: {song.artist}</p>
+      <p>Album: {song.album}</p> <p>Time: {song.time}</p>
+      <p>Favorite: {song.is_favorite ? (
+          <span>⭐️</span>
+        ) : (
+          <span>&nbsp; &nbsp; &nbsp;</span>
+        )}</p>
+      <button className="DeleteButton" onClick={handleDelete}>Delete</button>
+      <Link to={`/songs/${song.id}/edit`}><button className="EditButton">Edit</button></Link>
+      <Link to={`/songs`}>
+        <button className="GoBackButton">Go Back</button>
+      </Link>
     </article>
   );
 };

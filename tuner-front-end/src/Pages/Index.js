@@ -1,10 +1,5 @@
 import Songs from "../Components/Songs";
 const Index = () => {
-  return (
-    <div>
-      <h2>Index</h2>
-      <Songs />
-    </div>
-  );
+  return <Songs />;
 };
 export default Index;

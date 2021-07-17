@@ -22,8 +22,8 @@ const Songs = () => {
 
   return (
     <section>
-      <h1>PlayList</h1>
-      <table>
+      <h1 className="SongsListHeader">Playlist Index</h1>
+      <table className="SongsListTable">
         <thead>
           <tr>
             <th>Favorite</th>
@@ -36,21 +36,27 @@ const Songs = () => {
         <tbody>
           {songs.map((song, id) => {
             return (
-                <tr key={id}>
-                  <td>
-                    {song.is_favorite ? (
-                      <span>⭐️</span>
-                    ) : (
-                      <span>&nbsp; &nbsp; &nbsp;</span>
-                    )}
-                  </td>
-                  <td>
-                    <Link to={`/songs/${song.id}`}>{song.name}</Link>
-                  </td>
-                  <td>{song.artist}</td>
-                  <td>{song.album}</td>
-                  <td>{song.time}</td>
-                </tr>
+              <tr key={id}>
+                <td>
+                  {song.is_favorite ? (
+                    <span>⭐️</span>
+                  ) : (
+                    <span>&nbsp; &nbsp; &nbsp;</span>
+                  )}
+                </td>
+                <td className="SongIdLink">
+                  <Link to={`/songs/${song.id}`}>{song.name}</Link>
+                </td>
+                <td className="SongIdLink">
+                  <Link to={`/songs/${song.id}`}>{song.artist}</Link>
+                </td>
+                <td className="SongIdLink">
+                  <Link to={`/songs/${song.id}`}>{song.album}</Link>
+                </td>
+                <td className="SongIdLink">
+                  <Link to={`/songs/${song.id}`}>{song.time}</Link>
+                </td>
+              </tr>
             );
           })}
         </tbody>

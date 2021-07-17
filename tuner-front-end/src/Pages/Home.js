@@ -1,8 +1,8 @@
 const Home = () => {
   return (
     <section>
-      <h1>Welcome to AnJu's Tuner App</h1>
-      <h2>Where we're in harmony with your listening needs</h2>
+      <h1 className="Welcome">Welcome to AnJu's Tuner App</h1>
+      <h1 className="Slogan">In harmony with your listening needs</h1>
     </section>
   );
 };
