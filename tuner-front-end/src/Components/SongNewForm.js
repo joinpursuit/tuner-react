@@ -25,7 +25,7 @@ const SongNewForm = (props) => {
   };
 
   const handleChange = (e) => {
-    setSong({ ...song, [e.target.id]: [e.target.value] });
+    setSong({ ...song, [e.target.id]: e.target.value});
   };
 
   const handleIsFavorite = () => {
@@ -39,7 +39,7 @@ const SongNewForm = (props) => {
   };
 
   return (
-    <div className="Edit">
+    <div className="New">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
@@ -66,6 +66,15 @@ const SongNewForm = (props) => {
           name="album"
           value={song.album}
           placeholder="Album name"
+          onChange={handleChange}
+        />
+         <label htmlFor="time">Time:</label>
+        <input
+          id="time"
+          type="text"
+          name="time"
+          value={song.time}
+          placeholder="Time"
           onChange={handleChange}
         />
         <label htmlFor="is_favorite">Favorite:</label>

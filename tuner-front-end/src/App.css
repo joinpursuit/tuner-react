@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+
+.detailsContainer {
+  display: flex;
+  justify-content: center;
+  margin-left: 35%;
+  margin-top: 3%;
+  margin-right: 35%;
+  flex-direction: column;
+}
+
+.songCard {
+  display: flex;
+  padding: 5%;
+  text-align: left;
+  flex-direction: column;
+  border: 3px solid rgb(77, 77, 77);
+  border-radius: 5px;
+  font-size: 25px;
+  background-color: rgb(223, 186, 233);
+}
+
+
+.detailButtons {
+  display: flex;
+  flex-direction: row;
+  padding: 14%;
+}

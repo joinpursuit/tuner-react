@@ -28,13 +28,13 @@ const SongsList = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Take me there</th>
-              <th>See this bookmark</th>
+              <th>Song</th>
+              <th>Time</th>
             </tr>
           </thead>
           <tbody>
             {songs.map((song) => {
-              return <SongListItem key={song.id} song={song} />;
+              return <SongListItem key={song.id} song={song}/>;
             })}
           </tbody>
         </table>

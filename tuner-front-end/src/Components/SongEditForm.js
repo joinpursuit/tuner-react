@@ -79,6 +79,15 @@ const SongEditForm = (props) => {
           placeholder="Album name"
           onChange={handleChange}
         />
+        <label htmlFor="time">Time:</label>
+        <input
+          id="time"
+          type="text"
+          name="time"
+          value={song.time}
+          placeholder="Time"
+          onChange={handleChange}
+        />
         <label htmlFor="is_favorite">Favorite:</label>
         <input
           id="is_favorite"

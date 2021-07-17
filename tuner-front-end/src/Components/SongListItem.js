@@ -11,12 +11,10 @@ const SongListItem = ({ song }) => {
         )}
       </td>
       <td>
-        <a href={song.url} target="_blank" rel="noreferrer">
-          {song.name}
-        </a>
+        <Link to={`/songs/${song.id}`}>🎵 {song.name} </Link>
       </td>
       <td>
-        <Link to={`/songs/${song.id}`}>🎵</Link>
+        <p>{song.time}</p>
       </td>
     </tr>
   );

@@ -1,5 +1,5 @@
 nav {
-  background: #d1a4fa;
+  background: #c203b2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,9 +13,13 @@ main {
   margin: auto;
 }
 
+nav a {
+  text-decoration: none;
+  color: #efe5f1;
+}
 a {
   text-decoration: none;
-  color: #6f2c80;
+  color: #c511e9;
 }
 
 h4 {
