@@ -89,6 +89,9 @@ function SongEditForm() {
 
         <input type="submit" />
       </form>
+      <Link to={`/songs/${id}`}>
+        <button>Back</button>
+      </Link>
     </div>
   );
 }
