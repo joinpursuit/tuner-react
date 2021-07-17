@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,26 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.NavBarContainer {
+  background-color: greenyellow;
+  display: flex;
+  font-size: 21px;
+  justify-content: space-around;
+  margin: 0;
+  padding-left: 30px;
+}
+
+.NewSongButton {
+  height: 60px;
+  margin: 20px;
+  background-color: greenyellow;
+  border-radius: 40px;
+  border: 2px solid black;
+  box-shadow: 2px 4px rgba(54, 53, 53, 0.7);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 21px;
+  padding: 12px 15px 15px 15px;
 }

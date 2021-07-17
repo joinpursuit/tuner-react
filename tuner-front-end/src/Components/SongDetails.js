@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
 
 const API = apiURL();
@@ -35,6 +35,10 @@ const SongDetails = () => {
     history.push("/songs");
   };
 
+  // const handleEdit = () => {
+
+  // }
+
   return (
     <article>
       <p>
@@ -44,6 +48,8 @@ const SongDetails = () => {
         {song.album} {song.time}
       </p>
       <button onClick={handleDelete}>Delete</button>
+      {/* <button onClick={handleEdit}>Edit</button> */}
+      <Link to={`/songs`}><button>Go Back</button></Link>
     </article>
   );
 };
