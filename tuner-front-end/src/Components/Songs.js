@@ -45,7 +45,7 @@ const Songs = () => {
                     )}
                   </td>
                   <td>
-                    <Link to={`/songs/${id}`}>{song.name}</Link>
+                    <Link to={`/songs/${song.id}`}>{song.name}</Link>
                   </td>
                   <td>{song.artist}</td>
                   <td>{song.album}</td>
