@@ -27,10 +27,15 @@ function NewSong({addSong}) {
         <form onSubmit={handleSubmit}>
             <label htmlFor="name">Song Name: </label>
             <input type="text" id="name" value={song.name} onChange={handleTextInput} required />
-            <label htmlFor=""></label>
-            <label htmlFor=""></label>
-            <label htmlFor=""></label>
-            <label htmlFor=""></label>
+            <label htmlFor="">Artist: </label>
+            <input type="text" />
+            <label htmlFor="">Album: </label>
+            <input type="text" />
+            <label htmlFor="">Time: </label>
+            <input type="text" />
+            <label htmlFor="">Favorite? </label>
+            <input type="checkbox" id="favorite" value={song.favorite} onChange={handleCheckBox} />
+            <input type="submit" />
 
         </form>
     )
