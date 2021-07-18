@@ -39,9 +39,9 @@ const Songs = () => {
               <tr key={id}>
                 <td>
                   {song.is_favorite ? (
-                    <span>⭐️</span>
+                    <span>&#11088;</span>
                   ) : (
-                    <span>❌</span>
+                    <span className="X">&#10060;</span>
                   )}
                 </td>
                 <td className="SongIdLink">

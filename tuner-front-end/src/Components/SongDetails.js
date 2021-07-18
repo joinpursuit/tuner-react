@@ -41,9 +41,9 @@ const SongDetails = () => {
       <p>Name: {song.name}</p> <p>Artist: {song.artist}</p>
       <p>Album: {song.album}</p> <p>Time: {song.time}</p>
       <p>Favorite: {song.is_favorite ? (
-          <span>⭐️</span>
+          <span>&#11088;</span>
         ) : (
-          <span>❌</span>
+          <span className="X">&#10060;</span>
         )}</p>
       <button className="DeleteButton" onClick={handleDelete}>Delete</button>
       <Link to={`/songs/${song.id}/edit`}><button className="EditButton">Edit</button></Link>
