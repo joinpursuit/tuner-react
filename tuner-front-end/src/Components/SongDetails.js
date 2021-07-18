@@ -21,8 +21,8 @@ const SongDetails = () => {
   useEffect(() => {
     const getSongDeets = async () => {
       try {
-        const result = await axios.get(`${API}/songs/${id}`);
-        setSong(result.data.payload);
+        const res = await axios.get(`${API}/songs/${id}`);
+        setSong(res.data.payload);
       } catch (err) {
         console.log(err);
       }
@@ -35,10 +35,6 @@ const SongDetails = () => {
     history.push("/songs");
   };
 
-  // const handleEdit = () => {
-
-  // }
-
   return (
     <article className="SongDetails">
       <h2>Song Deets</h2>
@@ -47,7 +43,7 @@ const SongDetails = () => {
       <p>Favorite: {song.is_favorite ? (
           <span>⭐️</span>
         ) : (
-          <span>&nbsp; &nbsp; &nbsp;</span>
+          <span>❌</span>
         )}</p>
       <button className="DeleteButton" onClick={handleDelete}>Delete</button>
       <Link to={`/songs/${song.id}/edit`}><button className="EditButton">Edit</button></Link>

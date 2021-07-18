@@ -4,6 +4,10 @@ import { useParams, Link, useHistory } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
 
 const SongEditForm = () => {
+  let { id } = useParams();
+  let history = useHistory();
+  const API = apiURL();
+
   const [song, setSong] = useState({
     name: "",
     artist: "",
@@ -11,9 +15,8 @@ const SongEditForm = () => {
     time: "",
     is_favorite: false,
   });
-  let { id } = useParams();
-  let history = useHistory();
-  const API = apiURL();
+
+  console.log(song)
 
   const updateSong = async (updatedSong) => {
     try {
@@ -25,6 +28,7 @@ const SongEditForm = () => {
   };
 
   const handleTextChange = (event) => {
+    // debugger
     setSong({ ...song, [event.target.id]: event.target.value });
   };
 
@@ -33,15 +37,23 @@ const SongEditForm = () => {
   };
 
   useEffect(() => {
-    axios.get(`${API}/songs/${id}`).then(
-      (response) => setSong(response.data),
-      (error) => history.push(`/not-found`)
-    );
-  }, [id, history, API]);
+    // debugger
+    const editSong = async () => {
+      try {
+        const res = await axios.get(`${API}/songs/${id}`);
+        setSong(res.data.payload);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    editSong();
+  }, [id, API]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(song)
     updateSong(song, id);
+    // console.log(song)
   };
 
   return (
@@ -63,8 +75,8 @@ const SongEditForm = () => {
           id="artist"
           type="text"
           value={song.artist}
-          placeholder="Artist"
           onChange={handleTextChange}
+          placeholder="Artist"
           required
         />
         <br />
@@ -74,8 +86,8 @@ const SongEditForm = () => {
           type="text"
           name="album"
           value={song.album}
-          placeholder="Album"
           onChange={handleTextChange}
+          placeholder="Album"
           required
         />
         <br />
@@ -85,8 +97,8 @@ const SongEditForm = () => {
           type="text"
           name="time"
           value={song.time}
-          placeholder="Time"
           onChange={handleTextChange}
+          placeholder="Time"
           required
         />
         <br />
@@ -95,19 +107,17 @@ const SongEditForm = () => {
           id="is_favorite"
           type="checkbox"
           onChange={handleCheckboxChange}
-          checked={song.is_favorite}
-          required
+          checked={song.is_favorite || false}
         />
 
         <br />
-        <input className="SubmitButton" type="submit" />
+        <button className="SubmitButton" type="submit">Submit</button>
       </form>
-      <Link to={`/songs/${id}`}><button className="NeverMindButton">Never Mind!</button></Link>
-
+      <Link to={`/songs/${id}`}>
+        <button className="NeverMindButton">Never Mind!</button>
+      </Link>
     </div>
   );
 };
-
-
 
 export default SongEditForm;

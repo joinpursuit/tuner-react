@@ -41,7 +41,7 @@ const Songs = () => {
                   {song.is_favorite ? (
                     <span>⭐️</span>
                   ) : (
-                    <span>&nbsp; &nbsp; &nbsp;</span>
+                    <span>❌</span>
                   )}
                 </td>
                 <td className="SongIdLink">
