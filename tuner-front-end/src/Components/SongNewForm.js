@@ -91,7 +91,7 @@ const SongNewForm = () => {
           checked={song.is_favorite}
         />
         <br />
-        <input className="SubmitButton" type="submit" />
+        <button className="SubmitButton" type="submit">Submit</button>
       </form>
     </div>
   );
