@@ -45,9 +45,10 @@ const SongEditForm = () => {
   };
 
   return (
-    <div className="Edit">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+    <div className="EditSong">
+      <form className="EditSongForm" onSubmit={handleSubmit}>
+        <h1>Edit a Song</h1>
+        <label htmlFor="name">Song Name</label>
         <input
           id="name"
           value={song.name}
@@ -56,7 +57,7 @@ const SongEditForm = () => {
           placeholder="Name"
           required
         />
-       <label htmlFor="artist">Artist:</label>
+        <label htmlFor="artist">Artist</label>
         <input
           id="artist"
           type="text"
@@ -65,7 +66,7 @@ const SongEditForm = () => {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="album">Album:</label>
+        <label htmlFor="album">Album</label>
         <input
           id="album"
           type="text"
@@ -75,7 +76,7 @@ const SongEditForm = () => {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="time">Time:</label>
+        <label htmlFor="time">Time</label>
         <input
           id="time"
           type="text"
@@ -85,7 +86,7 @@ const SongEditForm = () => {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="is_favorite">Favorite:</label>
+        <label htmlFor="is_favorite">Favorite</label>
         <input
           id="is_favorite"
           type="checkbox"
@@ -95,13 +96,14 @@ const SongEditForm = () => {
         />
 
         <br />
-        <input type="submit" />
+        <input className="SubmitButton" type="submit" />
+      <Link to={`/songs/${id}`}><button className="NeverMindButton">Never Mind!</button></Link>
       </form>
-      <Link to={`/songs/${id}`}>
-        <button>Nevermind!</button>
-      </Link>
+
     </div>
   );
 };
+
+
 
 export default SongEditForm;

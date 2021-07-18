@@ -38,9 +38,10 @@ const SongNewForm = () => {
   };
 
   return (
-    <div className="New">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Song Name:</label>
+    <div className="NewSong">
+      <form className="NewSongForm" onSubmit={handleSubmit}>
+        <h1 className="NewSongHeader">Add a New Song</h1>
+        <label htmlFor="name">Song Name</label>
         <input
           id="name"
           value={song.name}
@@ -49,7 +50,8 @@ const SongNewForm = () => {
           placeholder="Name"
           required
         />
-        <label htmlFor="artist">Artist:</label>
+        <br />
+        <label htmlFor="artist">Artist</label>
         <input
           id="artist"
           type="text"
@@ -58,7 +60,8 @@ const SongNewForm = () => {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="album">Album:</label>
+        <br />
+        <label htmlFor="album">Album</label>
         <input
           id="album"
           type="text"
@@ -68,7 +71,8 @@ const SongNewForm = () => {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="time">Time:</label>
+        <br />
+        <label htmlFor="time">Time</label>
         <input
           id="time"
           type="text"
@@ -78,16 +82,16 @@ const SongNewForm = () => {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="is_favorite">Favorite:</label>
+        <br />
+        <label htmlFor="is_favorite">Favorite</label>
         <input
           id="is_favorite"
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={song.is_favorite}
         />
-
         <br />
-        <input type="submit" />
+        <input className="SubmitButton" type="submit" />
       </form>
     </div>
   );
