@@ -23,4 +23,4 @@ return (
     </div>
 )
 }
-export default songDetails
+export default songDetails;
