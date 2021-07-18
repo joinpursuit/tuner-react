@@ -83,10 +83,6 @@ body {
   padding: 8px;
 }
 
-.SongsListTable tr:hover {
-  background-color: #ddd;
-}
-
 .SongsListTable th {
   text-align: center;
   background-color: chocolate;

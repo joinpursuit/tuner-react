@@ -57,6 +57,7 @@ const SongEditForm = () => {
           placeholder="Name"
           required
         />
+        <br />
         <label htmlFor="artist">Artist</label>
         <input
           id="artist"
@@ -66,6 +67,7 @@ const SongEditForm = () => {
           onChange={handleTextChange}
           required
         />
+        <br />
         <label htmlFor="album">Album</label>
         <input
           id="album"
@@ -76,6 +78,7 @@ const SongEditForm = () => {
           onChange={handleTextChange}
           required
         />
+        <br />
         <label htmlFor="time">Time</label>
         <input
           id="time"
@@ -86,6 +89,7 @@ const SongEditForm = () => {
           onChange={handleTextChange}
           required
         />
+        <br />
         <label htmlFor="is_favorite">Favorite</label>
         <input
           id="is_favorite"
