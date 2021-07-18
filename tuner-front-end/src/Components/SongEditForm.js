@@ -16,8 +16,6 @@ const SongEditForm = () => {
     is_favorite: false,
   });
 
-  console.log(song)
-
   const updateSong = async (updatedSong) => {
     try {
       await axios.put(`${API}/songs/${id}`, updatedSong);
@@ -28,7 +26,6 @@ const SongEditForm = () => {
   };
 
   const handleTextChange = (event) => {
-    // debugger
     setSong({ ...song, [event.target.id]: event.target.value });
   };
 
@@ -37,7 +34,6 @@ const SongEditForm = () => {
   };
 
   useEffect(() => {
-    // debugger
     const editSong = async () => {
       try {
         const res = await axios.get(`${API}/songs/${id}`);
@@ -51,9 +47,7 @@ const SongEditForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(song)
     updateSong(song, id);
-    // console.log(song)
   };
 
   return (
