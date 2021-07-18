@@ -1,32 +1,20 @@
-import React from "react";
-import { apiURL } from "../util/apiURL";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
-const API = apiURL();
-export default function SongListItem() {
-  const [song, setSong] = useState({});
-  const { id } = useParams();
-
-  const fetchSong = async () => {
-      
-    try {
-      const song = await axios.get(`${API}/songs/${id}`);
-      setSong(song.data.payload);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(()=>{
-      fetchSong()
-  })
-
-  return(
-       <div>
-           <h1>One Song</h1>
-           {song.name}
-           </div>)
-       
+export default function SongListItem({ song }) {
+  return (
+    <div>
+      <tr>
+        <td>
+          {song.is_favorite ? (
+            <span>⭐️</span>
+          ) : (
+            <span>&nbsp; &nbsp; &nbsp;</span>
+          )}
+        </td>
+        <td>
+          <Link to={`/songs/${song.id}`}> {song.name} {song.artist} {song.time} ✏️</Link>
+        </td>
+      </tr>
+    </div>
+  );
 }

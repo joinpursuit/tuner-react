@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { apiURL } from "../util/apiURL";
 import { Link } from "react-router-dom";
+import SongListItem from "./SongListItem";
 
 const API = apiURL();
 
@@ -19,24 +20,32 @@ export default function SongsList() {
   };
 
   useEffect(() => {
-      fetchSongs();
+    fetchSongs();
   }, []);
 
   return (
     <div>
       <h1>Hello</h1>
       <ul>
-        {songs.map((song) => {
+        {/* {songs.map((song) => {
           return (
-              // is_favorite should show as star icon
+            // is_favorite should show as star icon
             <li key={song.id}>
-              {" "}
-              {song.name} {song.artist} {song.time}{" "}
+              <Link path to={`/songs/${song.id}`}>
+                {song.name} {song.artist} {song.time}
+              </Link>
             </li>
           );
+        })} */}
+        {songs.map((song) => {
+          return <SongListItem key={song.id} song={song} />;
         })}
       </ul>
-      <button><Link path to= "/songs/new">New Song</Link></button>
+      <button>
+        <Link path to="/songs/new">
+          New Song
+        </Link>
+      </button>
     </div>
   );
 }

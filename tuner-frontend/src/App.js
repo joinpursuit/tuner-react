@@ -4,7 +4,11 @@ import { Route, Switch } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 
 import Index from "./Pages/Index";
-import Show from "./Components/SongListItem"
+import Show from "./Pages/Show";
+import Home from "./Pages/Home";
+import New from "./Pages/New";
+import Edit from "./Pages/Edit";
+import FourOFour from "./Pages/FourOFour";
 
 import "./App.css";
 
@@ -15,23 +19,23 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <h1>Let's find you some music</h1>
+            <Home />
+          </Route>
+          <Route exact path="/songs">
+            <Index />
+          </Route>
+          <Route path="/songs/new">
+            <New />
           </Route>
           <Route exact path="/songs/:id">
             <Show />
           </Route>
-          <Route path="/songs">
-            <Index />
-          </Route>
-          {/* <Route path="/songs/new">
-            <New addSong={addSong} />
-          </Route> */}
-          {/* <Route exact path="/songs/:id/edit">
-            <Edit editSong={editSong} />
+          <Route exact path="/songs/:id/edit">
+            <Edit />
           </Route>
           <Route exact path="*">
-            <FourOFour /> */}
-          {/* </Route> */}
+            <FourOFour />
+          </Route>
         </Switch>
       </main>
     </div>
