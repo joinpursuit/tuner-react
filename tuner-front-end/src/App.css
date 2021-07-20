@@ -1,38 +1,85 @@
+.navbar {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.heading-link {
+  text-decoration: none;
+}
+
 .App {
-  text-align: center;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+table {
+  border: black solid 1px;
+  border-radius: 5px;
+}
+
+tr,
+th {
+  background-color: rgb(201, 66, 66);
+}
+
+.song {
+  border: rgb(201, 66, 66) solid 1px;
+  border-radius: 5px;
+  background-color: rgb(201, 66, 66);
+  padding: 10px;
+}
+
+.song-header {
+  display: flex;
+  justify-content: space-evenly;
+  width: 470px;
+}
+
+.buttons {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.new-page {
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.new-form {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit-page {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
 }
