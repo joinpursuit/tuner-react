@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import apiURL from "../util/apiURL";
+import {apiURL} from "../util/apiURL";
 import { Link } from "react-router-dom";
 
 const API = apiURL();
