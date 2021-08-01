@@ -48,6 +48,9 @@ export default function SongDetails() {
                 <button>Back</button>
             </Link>
             <button onClick={handleDelete}>Delete</button>
+            <Link to='/songs/edit'>
+                <button>Edit</button>
+            </Link>
         </article>
     )
 }

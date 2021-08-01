@@ -9,6 +9,7 @@ import Home from './Pages/Home'
 import Index from './Pages/Index'
 import Show from './Pages/Show'
 import New from './Pages/New'
+import Edit from './Pages/Edit'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/songs' component={Index} />
           <Route path='/songs/new' component={New} />
+          <Route path='/songs/edit' component={Edit} />
           <Route exact path='/songs/:id' component={Show} />
         </Switch>
       </main>

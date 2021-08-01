@@ -17,8 +17,9 @@ export default function NewSongForm() {
     
     const history = useHistory()
 
+    // Figure out error in AddSong
     const addSong = () => {
-        axios.post(`${API}/songs`, {song})
+        axios.post(`${API}/songs`, song)
         .then(() => {history.push('/songs')},
             (error) => {console.log(`Error in addSong: `, error)}
         )
@@ -33,7 +34,7 @@ export default function NewSongForm() {
         setSong({ ...song, [e.target.id]: e.target.value })
     }
     const handleCheckbox = (e) => {
-        setSong({ ...song })
+        setSong({ ...song, [e.target.id]: !song.is_favorite })
     }
 
     return (
