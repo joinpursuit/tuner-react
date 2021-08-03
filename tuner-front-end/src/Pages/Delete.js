@@ -2,10 +2,10 @@ import SongsDelete from "../Components/SongsDelete";
 
 function Delete() {
   return (
-    <section className="Delete">
+    <main className="Delete">
       <h2>Delete</h2>
       <SongsDelete />
-    </section>
+    </main>
   );
 }
 

@@ -1,11 +1,11 @@
-// import SongDetails from "../Components/SongDetails";
+import PlaylistDetails from "../Components/PlaylistDetails";
 
 function Show() {
   return (
-    <section className="Show">
+    <main className="Show">
       <h2>Show</h2>
-      {/* <SongDetails /> */}
-    </section>
+      <PlaylistDetails />
+    </main>
   );
 }
 

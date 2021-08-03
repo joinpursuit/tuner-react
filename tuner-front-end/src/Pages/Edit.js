@@ -1,11 +1,11 @@
-// import SongEditForm from "../Components/SongEditForm";
+import EditPlaylist from "../Components/EditPlaylist";
 
 function Edit() {
   return (
-    <section className="New Edit">
+    <main className="New Edit">
       <h2>Edit</h2>
-      {/* <SongEditForm /> */}
-    </section>
+      <EditPlaylist />
+    </main>
   );
 }
 

@@ -1,7 +1,7 @@
 export default function FourOFour() {
     return (
-      <section>
+      <main>
         <h1>Sorry, no page found</h1>
-      </section>
+      </main>
     );
   }

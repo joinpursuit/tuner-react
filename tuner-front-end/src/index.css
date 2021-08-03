@@ -27,6 +27,10 @@ section {
   margin-left: 2vw;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 /* CSS RESET */
 /* html, body, header, nav, h1, a,
 ul, ol, li, strong, main, button, i,

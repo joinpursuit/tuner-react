@@ -9,21 +9,14 @@ function PlaylistsList() {
   const [playlists, setPlaylists] = useState([]);
   
   useEffect(() => {
-    const getThePlaylists = () => {
+    const getThePlaylists = async () => {
       try {
-        console.log('About to make a "GET" to:', `${API}/playlists`);
-        setTimeout(async () => { // putting call inside setTimeout to pause execution for a bit, educational purposes only.
-          
           const res = await axios.get(`${API}/playlists`);
-          console.log('Received a response', res.data);
           setPlaylists(res.data.payload);
-
-        }, 5000)
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        console.log(error);
       }
     };
-
     getThePlaylists();
   }, []);
   
@@ -33,9 +26,8 @@ function PlaylistsList() {
         <table>
           <thead>
             <tr>
-              <th></th>
-              <th>Take me there</th>
-              <th>See this playlist</th>
+              <th>Name</th>
+              <th>Edit</th>
             </tr>
           </thead>
           <tbody>
