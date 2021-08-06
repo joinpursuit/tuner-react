@@ -5,41 +5,41 @@ import { apiURL } from "../util/apiURL";
 
 const API = apiURL();
 
-function EditPlaylist() {
+function EditSong() {
   const { id } = useParams();
   const history = useHistory();
 
-  const [playlist, setPlaylist] = useState({
+  const [song, setSong] = useState({
     name: ""
   });
 
-  const updatePlaylist = async (updatedPlaylist) => {
+  const updateSong = async (updatedSong) => {
     try {
-      await axios.put(`${API}/playlists/${id}`, updatedPlaylist);
-      history.push(`/playlists/${id}`);
+      await axios.put(`${API}/songs/${id}`, updatedSong);
+      history.push(`/songs/${id}`);
     } catch (e) {
       console.log(e);
     }
   };
 
   const handleTextChange = (event) => {
-    setPlaylist({ ...playlist, [event.target.id]: event.target.value });
+    setSong({ ...song, [event.target.id]: event.target.value });
   };
 
   const handleCheckboxChange = () => {
-    setPlaylist({ ...playlist, is_favorite: !playlist.is_favorite });
+    setSong({ ...song, is_favorite: !song.is_favorite });
   };
 
   useEffect(() => {
-    axios.get(`${API}/playlists/${id}`).then(
-      (response) => setPlaylist(response.data),
+    axios.get(`${API}/songs/${id}`).then(
+      (response) => setSong(response.data),
       (error) => history.push(`/not-found`)
     );
-  }, [id, history, API]);
+  }, [id, history]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updatePlaylist(playlist, id);
+    updateSong(song, id);
   };
 
   return (
@@ -48,7 +48,7 @@ function EditPlaylist() {
         <label htmlFor="name">Name:</label>
         <input
           id="name"
-          value={playlist.name}
+          value={song.name}
           type="text"
           onChange={handleTextChange}
           placeholder="Name of Website"
@@ -60,7 +60,7 @@ function EditPlaylist() {
           type="text"
           pattern="http[s]*://.+"
           required
-          value={playlist.url}
+          value={song.url}
           placeholder="http://"
           onChange={handleTextChange}
         />
@@ -69,7 +69,7 @@ function EditPlaylist() {
           id="category"
           type="text"
           name="category"
-          value={playlist.category}
+          value={song.category}
           placeholder="educational, inspirational, ..."
           onChange={handleTextChange}
         />
@@ -78,18 +78,18 @@ function EditPlaylist() {
           id="is_favorite"
           type="checkbox"
           onChange={handleCheckboxChange}
-          checked={playlist.is_favorite}
+          checked={song.is_favorite}
         />
 
         <br />
 
         <input type="submit" />
       </form>
-      <Link to={`/playlists/${id}`}>
+      <Link to={`/songs/${id}`}>
         <button>Nevermind!</button>
       </Link>
     </div>
   );
 }
 
-export default EditPlaylist;
+export default EditSong;

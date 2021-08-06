@@ -1,10 +1,10 @@
-import ListPlaylists from "../Components/ListPlaylists";
+import ListSongs from "../Components/ListSongs";
 
 function Index() {
   return (
     <main className="Index">
-      <h2>Current Playlists</h2>
-      <ListPlaylists />
+      <h2>Current Songs</h2>
+      <ListSongs />
     </main>
   );
 }

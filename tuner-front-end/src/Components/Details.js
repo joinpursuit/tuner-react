@@ -5,58 +5,61 @@ import { apiURL } from "../util/apiURL";
 
 const API = apiURL();
 
-function PlaylistDetails() {
-  const [playlist, setPlaylist] = useState([]);
+function Details() {
+  const [song, setSong] = useState([]);
   const history = useHistory();
   const { id } = useParams();
 
-  const editPlaylist = async () => {
+  const editSong = async () => {
     try {
-      await axios.put(`${API}/playlists/${id}`);
+      await axios.put(`${API}/songs/${id}`);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   }
   
-  const deletePlaylist = async () => {
+  const deleteSong = async () => {
     try {
-      await axios.delete(`${API}/playlists/${id}`);
+      await axios.delete(`${API}/songs/${id}`);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   };
 
-  const fetchPlaylist = async () => {
-    try {
-      const result = await axios.get(`${API}/playlists/${id}`);
-    //   console.log(result);
-      setPlaylist(result.data.payload);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
 
   const goBack = () => {
-    history.push("/playlists");
+    history.push("/songs");
   };
 
   useEffect(() => {
-    fetchPlaylist();
-  }, []);
+
+    const fetchSong = async () => {
+      try {
+        const result = await axios.get(`${API}/songs/${id}`);
+      //   console.log(result);
+        setSong(result.data.payload);
+      } catch (error) {
+        return error;
+      }
+    };
+    fetchSong();
+    
+  }, [id]);
 
   const handleDelete = async () => {
-    await deletePlaylist();
+    await deleteSong();
     goBack();
   };
 
   const handleEdit = async () => {
-    await editPlaylist();
+    await editSong();
   }
 
   return (
     <section className="Details">
       <p>
-        <b>Name:</b> {playlist.name}
+        <b>Name:</b> {song.name}
       </p>
       <button onClick={handleDelete}>Delete</button>
       <button onClick={goBack}>Back</button>
@@ -65,4 +68,4 @@ function PlaylistDetails() {
   );
 }
 
-export default withRouter(PlaylistDetails);
+export default withRouter(Details);

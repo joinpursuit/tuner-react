@@ -1,10 +1,10 @@
-import SongsDelete from "../Components/SongsDelete";
+import DeleteSong from "../Components/DeleteSong";
 
 function Delete() {
   return (
     <main className="Delete">
       <h2>Delete</h2>
-      <SongsDelete />
+      <DeleteSong />
     </main>
   );
 }

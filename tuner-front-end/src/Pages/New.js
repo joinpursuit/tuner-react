@@ -1,10 +1,10 @@
-import NewPlaylistForm from "../Components/NewPlaylistForm";
+import NewSongForm from "../Components/NewSongForm";
 
 function New() {
   return (
-    <main className="New">
-      <h2>Add a New Playlist</h2>
-      <NewPlaylistForm />
+    <main className="New-Song-Form">
+      <h2>Add a New Song</h2>
+      <NewSongForm />
     </main>
   );
 }

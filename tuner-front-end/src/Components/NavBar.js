@@ -4,8 +4,8 @@ export default function NavBar() {
   return (
     <nav>
         <NavLink exact to="/">Home</NavLink>
-        <NavLink to="/playlists">Playlists</NavLink>
-        <NavLink to="/playlists/new">New Playlist</NavLink>
+        <NavLink to="/songs">Songs</NavLink>
+        <NavLink to="/songs/new">New Song</NavLink>
     </nav>
   );
 }

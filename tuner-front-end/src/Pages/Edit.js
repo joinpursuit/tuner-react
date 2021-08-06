@@ -1,10 +1,10 @@
-import EditPlaylist from "../Components/EditPlaylist";
+import EditSong from "../Components/EditSong";
 
 function Edit() {
   return (
-    <main className="New Edit">
+    <main className="Edit">
       <h2>Edit</h2>
-      <EditPlaylist />
+      <EditSong />
     </main>
   );
 }
