@@ -5,47 +5,45 @@ import { apiURL } from "../util/apiURL.js";
 
 const API = apiURL();
 
-function PlaylistNewForm() {
-  const [playlist, setPlaylist] = useState({
+function NewSongForm() {
+  const [song, setSong] = useState({
     name: "",
   });
 
   const history = useHistory();
 
-  const addPlaylist = async (newPlaylist) => {
+  const addSong = async (newSong) => {
     try {
-      await axios.post(`${API}/playlists`, newPlaylist);
-      history.push(`/playlists`);
+      await axios.post(`${API}/songs`, newSong);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   };
 
   const handleTextChange = (event) => {
-    setPlaylist({ ...playlist, [event.target.id]: event.target.value });
+    setSong({ ...song, [event.target.id]: event.target.value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addPlaylist(playlist);
+    addSong(song);
+    history.push(`/songs`);
   };
 
   return (
-    <section className="New">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          value={playlist.name}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Name of Playlist"
-          required
-        />
-        <button type="submit">Submt</button>
-      </form>
-    </section>
+    <form className="New" onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
+      <input
+        id="name"
+        value={song.name}
+        type="text"
+        onChange={handleTextChange}
+        placeholder="Name of Song"
+        required
+      />
+      <button type="submit">Submt</button>
+    </form>
   );
 }
 
-export default withRouter(PlaylistNewForm);
+export default withRouter(NewSongForm);
