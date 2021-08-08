@@ -24,8 +24,10 @@ function ListSongs() {
     <table className="songs">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Edit</th>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Time</th>
+          <th>Favorite</th>
         </tr>
       </thead>
       <tbody>

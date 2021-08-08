@@ -1,10 +1,10 @@
-import SongDetails from "../Components/Details";
+import Details from "../Components/Details";
 
 function Show() {
   return (
     <main className="Show">
-      <h2>Show</h2>
-      <SongDetails />
+      <h2>Song Details</h2>
+      <Details />
     </main>
   );
 }

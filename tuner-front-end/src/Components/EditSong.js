@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
 
@@ -10,85 +10,105 @@ function EditSong() {
   const history = useHistory();
 
   const [song, setSong] = useState({
-    name: ""
+    name: "",
+    artist: "",
+    album: "",
+    time: "",
+    is_favorite: false,
   });
 
   const updateSong = async (updatedSong) => {
     try {
       await axios.put(`${API}/songs/${id}`, updatedSong);
       history.push(`/songs/${id}`);
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      return error;
     }
   };
 
-  const handleTextChange = (event) => {
+  const handleText = (event) => {
     setSong({ ...song, [event.target.id]: event.target.value });
   };
 
-  const handleCheckboxChange = () => {
+  const handleCheckbox = () => {
     setSong({ ...song, is_favorite: !song.is_favorite });
   };
 
   useEffect(() => {
-    axios.get(`${API}/songs/${id}`).then(
-      (response) => setSong(response.data),
-      (error) => history.push(`/not-found`)
-    );
-  }, [id, history]);
+    const showSong = async () => {
+      try {
+        const res = await axios.get(`${API}/songs/${id}`);
+        setSong(res.data);
+      } catch (error) {
+        return error;
+      }
+    };
+    showSong();
+  }, [id]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     updateSong(song, id);
+    history.push(`/songs/${id}`);
   };
 
   return (
-    <div className="Edit">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+    <form className="Edit" onSubmit={handleSubmit}>
+      <label htmlFor="name">
+        Name:
         <input
           id="name"
           value={song.name}
           type="text"
-          onChange={handleTextChange}
-          placeholder="Name of Website"
+          onChange={handleText}
           required
         />
-        <label htmlFor="url">URL:</label>
+      </label>
+      <label htmlFor="album">
+        Album:
         <input
-          id="url"
+          id="album"
+          value={song.album}
           type="text"
-          pattern="http[s]*://.+"
+          onChange={handleText}
           required
-          value={song.url}
-          placeholder="http://"
-          onChange={handleTextChange}
         />
-        <label htmlFor="category">Category:</label>
+      </label>
+      <label htmlFor="artist">
+        Artist:
         <input
-          id="category"
+          id="artist"
+          value={song.artist}
           type="text"
-          name="category"
-          value={song.category}
-          placeholder="educational, inspirational, ..."
-          onChange={handleTextChange}
+          onChange={handleText}
+          required
         />
-        <label htmlFor="is_favorite">Favorite:</label>
+      </label>
+      <label htmlFor="time">
+        Time:
+        <input
+          id="time"
+          value={song.time}
+          type="text"
+          onChange={handleText}
+          required
+        />
+      </label>
+      <label htmlFor="is_favorite">
+        Favorite:
         <input
           id="is_favorite"
           type="checkbox"
-          onChange={handleCheckboxChange}
+          value={song.is_favorite}
+          onChange={handleCheckbox}
           checked={song.is_favorite}
         />
-
-        <br />
-
-        <input type="submit" />
-      </form>
+      </label>
       <Link to={`/songs/${id}`}>
-        <button>Nevermind!</button>
+        <button>Back</button>
       </Link>
-    </div>
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 
