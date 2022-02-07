@@ -1,6 +1,6 @@
 import './App.css';
 
-import {Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 //Pages
 import Edit from './Pages/Edit'
@@ -14,12 +14,12 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact to="/" element={<Home />} />
-        <Route to="/songs" element={<Index />} />
-        <Route to="/songs/:id" element={<Show />} />
-        <Route to="/songs/new" element={<New />} />
-        <Route to="/songs/:id/Edit" element={<Edit />} />
-        <Route to="*" element={<Error />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/songs" element={<Index />} />
+        <Route path="/songs/:id" element={<Show />} />
+        <Route path="/songs/new" element={<New />} />
+        <Route path="/songs/:id/Edit" element={<Edit />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );
