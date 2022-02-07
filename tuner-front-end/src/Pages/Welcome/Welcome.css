@@ -1,0 +1,14 @@
+.welcome {
+    background-color: rgb(174, 187, 187);
+    overflow: auto;
+    height: 100vh;
+    background-image: url('./music.jpeg');
+  }
+  
+  .welcome h2 {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 900;
+    height: 3rem;
+  }
+  

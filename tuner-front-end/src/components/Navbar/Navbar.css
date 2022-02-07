@@ -1,0 +1,54 @@
+.navbar {
+  background-color: rgba(20, 32, 13, 0.6);
+  height: max-content;
+  color: white;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  border-bottom: 0.39rem solid rgba(4, 43, 44, 0.716);
+  box-sizing: border-box;
+}
+
+.navbar .to-songs {
+  position: relative;
+  bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 3.5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding-top: 0.5rem;
+  border-radius: 17px;
+  background-color: #0c1c1ef0;
+  font-size: 1.9rem;
+  font-weight: 450;
+  height: 3rem;
+  width: max-content;
+}
+.navbar .new-song {
+  position: relative;
+  top: 1.9rem;
+  padding-left: 3.5rem; 
+   padding-right: 3.5rem;
+  padding-top: 0.5rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 17px;
+  background-color: #0c1c1ef0;
+  font-size: 1.9rem;
+  font-weight: 450;
+  height: 3rem;
+  width: max-content;
+}
+
+.navbar a,
+.navbar a:visited,
+.navbar a:active,
+.navbar a:hover {
+  text-decoration: none;
+  color: white;
+}

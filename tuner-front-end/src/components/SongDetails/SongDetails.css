@@ -1,0 +1,46 @@
+.song-detail {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(128, 57, 57, 0.25);
+  padding: 0 1.5rem;
+  margin: 3rem 25rem;
+  padding-left: 0;
+  background-color: rgba(166, 198, 181, 0.689);
+}
+
+.song-detail h3 {
+  background-color: rgba(1, 9, 11, 0.559);
+  width: 17rem;
+  height: 3rem;
+  text-align: center;
+  color: rgb(70, 19, 16);
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0.2rem;
+  padding: 12px 15px;
+}
+
+.song-detail h3:hover {
+  border-radius: 12px;
+  transform: scale(1.12);
+}
+
+.song-detail h4 {
+  background-color: rgba(81, 120, 130, 0.251);
+  width: 17rem;
+  height: 2rem;
+  text-align: center;
+  color: rgb(84, 6, 6);
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 0.2rem;
+  padding: 9px 15px;
+}
+
+.song-detail h4:hover {
+  border-radius: 12px;
+  transform: scale(1.12);
+}

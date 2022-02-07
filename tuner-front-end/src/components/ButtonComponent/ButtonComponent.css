@@ -1,0 +1,10 @@
+.button-control{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 25rem;
+}
+
+.btn-delete:hover{
+    transform: scale(1.19);
+  background-color: rgb(252, 16, 4);  
+}

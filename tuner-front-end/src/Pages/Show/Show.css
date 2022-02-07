@@ -1,0 +1,13 @@
+.show {
+    background-color: rgb(174, 187, 187);
+    overflow: auto;
+    height: 95vh;
+  }
+  
+  .show h2 {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 900;
+    height: 3rem;
+  }
+  

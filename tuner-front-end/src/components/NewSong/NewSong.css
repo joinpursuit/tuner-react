@@ -1,0 +1,59 @@
+.newSong {
+    background-color: rgba(113, 118, 119, 0.216);
+    margin-left: 675px;
+    margin-right: 275px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px black;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    width: 700px;
+    font-weight: bold;
+    height: 75vh;
+  }
+  
+  form {
+    display: grid;
+    gap: 25px;
+  }
+  
+  .newSong-control input {
+    /* width: auto;
+    height: 35px;
+    font-size: 25px;
+    font-weight: 900;
+    background-color: rgb(72, 97, 97); */
+  }
+  .newSong-control select {
+    /* width: auto;
+    height: 35px;
+    font-size: 25px;
+    font-weight: 900;
+    background-color: rgb(72, 97, 97); */
+  }
+  
+  form .form-submit {
+    /* width: 200px;
+    position: relative;
+    top: 150px;
+    height: 45px; */
+  }
+  
+  .form-nevermind {
+    /* background-color: rgb(72, 97, 97);
+    text-decoration: none;
+    width: 150px;
+    position: relative;
+    top: 105px;
+    height: 45px;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 450px; */
+  }
+  
+    form .form-submit {
+      /* width: 200px;
+      position: relative;
+      top: 50px;
+      height: 45px; */
+    }
+  
