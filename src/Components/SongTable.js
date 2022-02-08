@@ -23,7 +23,7 @@ const SongTable = () => {
           <tr>
             <td>Name</td>
             <td>Artist</td>
-            <td>Album</td>
+            <td>Time</td>
             <td>Favorite</td>
           </tr>
         </thead>
