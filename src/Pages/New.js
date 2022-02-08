@@ -1,9 +1,10 @@
-import React from 'react';
+import './New.css'
+import SongForm from "../Components/SongForm"
 
 function New() {
     return (
-        <div>
-            New
+        <div className='New'>
+            <SongForm />
         </div>
     );
 }

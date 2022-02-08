@@ -1,0 +1,7 @@
+.Edit {
+    background-color: lightgrey;
+    height: calc(100% - 80px);
+}
+.Edit h1 {
+    margin: 0;
+}
