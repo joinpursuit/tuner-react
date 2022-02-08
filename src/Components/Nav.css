@@ -1,0 +1,17 @@
+.Nav {
+    height: 80px;
+    width: 100%;
+    background-color: #242424;
+    color: white;
+    box-sizing: border-box;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px ;
+
+}
+.Nav h1{
+    margin: 0;
+
+}
