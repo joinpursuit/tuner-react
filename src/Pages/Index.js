@@ -5,9 +5,7 @@ import SongTable from '../Components/SongTable'
 function Index() {
   return (
     <div className='Index'>
-        <table>
           <SongTable />
-        </table>
     </div>);
 }
 
