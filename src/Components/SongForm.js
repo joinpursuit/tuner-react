@@ -12,8 +12,16 @@ const SongForm = () => {
   });
   const { id } = useParams();
   const navigate = useNavigate();
-
+  const URL = process.env.REACT_APP_API_URL;
   const isEdit = id + 1 ? true : false;
+
+  useEffect(() => {
+    const getSong = async () => {
+      const targetSong = await axios.get(`${URL}/songs/${id}`);
+      setSong(targetSong.data);
+    };
+    isEdit && getSong();
+  }, [URL, id]);
 
   const handleInputChange = (event) => {
     setSong({ ...song, [event.target.id]: event.target.value });
@@ -23,10 +31,18 @@ const SongForm = () => {
     setSong({ ...song, [event.target.id]: !song.is_favorite });
   };
 
+  const handleEdit = () => {
+    console.log('Edit');
+  };
+
+  const handleNew = () => {
+    console.log('New');
+  };
+
   return (
     <div className="SongForm">
       <h1>{isEdit ? 'Edit Song' : 'New Song'}</h1>
-      <form>
+      <form onSubmit={isEdit ? handleEdit : handleNew}>
         <label htmlFor="name">Name</label>
         <input
           id="name"
@@ -71,6 +87,12 @@ const SongForm = () => {
           type="checkbox"
           onChange={handleCheckChange}
         />
+        <div className="buttons">
+          <Link to={isEdit ? `/songs/${id}` : '/songs'}>
+            <button>Back</button>
+          </Link>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );

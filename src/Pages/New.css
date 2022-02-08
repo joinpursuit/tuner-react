@@ -1,0 +1,7 @@
+.New {
+  background-color: lightgray;
+  height: calc(100% - 80px);
+}
+.New h1 {
+  margin: 0;
+}
