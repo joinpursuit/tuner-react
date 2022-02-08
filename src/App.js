@@ -10,9 +10,14 @@ import Index from './Pages/Index'
 import Show from './Pages/Show'
 import Error from './Pages/Error'
 
+//Components
+import Nav from './Components/Nav';
+
+
 function App() {
   return (
     <div className="App">
+      <Nav />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/songs" element={<Index />} />
