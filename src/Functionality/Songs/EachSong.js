@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
-const EachSong = () => {
+
+const EachSong = ({song, index}) => {
     return (
-        <div>
-            <p>Imagine a table populating with each song</p>
-            <Link to="/songs/:id">Artist Name</Link>
-        </div>
+        <tr>
+            <td>{song.artist}</td>
+            <td>{song.name}</td>
+            <td><Link to={`/songs/${index}`}>🥁</Link></td>
+        </tr>
     )
 }
 
