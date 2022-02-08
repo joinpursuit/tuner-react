@@ -1,0 +1,7 @@
+.Home {
+  background-color: lightgray;
+  height: calc(100% - 80px);
+}
+.Home h1 {
+  margin: 0;
+}
