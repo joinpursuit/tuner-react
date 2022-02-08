@@ -15,17 +15,17 @@ useEffect(()=>{
     getSongs();
 },[])
 
-const tableRows = songs.map((e)=> {<Song song={e}/>})
+const tableRows = songs.map((e)=> <Song song={e}/>)
 
     return (
         <div className='SongTable'>
             <table>
                 <thead>
                     <tr>
-                        <td>name</td>
-                        <td>artist</td>
-                        <td>album</td>
-                        <td>favorite</td>
+                        <td>Name</td>
+                        <td>Artist</td>
+                        <td>Time</td>
+                        <td>Favorite</td>
                     </tr>
                 </thead>
                 <tbody>
