@@ -1,13 +1,21 @@
 import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from "react"
+import Song from './Song'
 
 function SongTable() {
 const [songs, setSongs] = useState([])
 const URL = process.env.REACT_APP_API_URL
 
+useEffect(()=>{
+    const getSongs = async () => {
+        const allSongs = await axios.get(`${URL}/songs`)
+        setSongs(allSongs.data)
+    }
+    getSongs();
+},[])
 
-
+const tableRows = songs.map((e)=> {<Song song={e}/>})
 
     return (
         <div className='SongTable'>
@@ -21,7 +29,7 @@ const URL = process.env.REACT_APP_API_URL
                     </tr>
                 </thead>
                 <tbody>
-
+                    {tableRows}
                 </tbody>
             </table>
         </div>
