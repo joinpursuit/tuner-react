@@ -1,26 +1,26 @@
 .songlist {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   margin-left: 3rem;
   margin-right: 3rem;
   font-size: 1.3rem;
   font-weight: 900;
   height: 3rem;
-  border-bottom: 0.2rem solid grey;
-  /* width: 50%; */
+  /* border-bottom: 0.2rem solid grey; */
+  width: 80%;
+  
 }
 
 .song-artist {
   padding-top: 1rem;
 }
 
-/* main {
+main {
   width: 90%;
   margin: auto;
-} */
+}
 
 table {
-  width: 50%;
+  width: 80%;
   margin: auto;
 }
 

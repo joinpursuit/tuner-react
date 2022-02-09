@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios"; 
 import "./SongDetails.css"
+import Albums from "../Albums/Albums";
 
  const SongDetails = () => {
     const [song, setSong] = useState({
@@ -22,14 +23,15 @@ import "./SongDetails.css"
       }, []);
     
      
-      const {  name, artist, album, time, is_favorite } = song;
+      const {  artistname, genre, nationality, activefrom, dateofbirth } = song;
   return (<div> 
       <div className="song-detail">
-      <h3> <span>Name :</span>  {`${name}`}</h3>
-      <h3><span>Artist :</span>  {`${artist}`}</h3>
-      <h4><span>Album :</span>  {`${album}`}</h4>
-      <h4><span>Year :</span>  {`${time}`}</h4>
-      <h4><span>Favorite :</span>   {" "}{is_favorite ? "✔" : "X"}</h4>
+      <h3> <span>ArtistName :</span>  {`${artistname}`}</h3>
+      <h3><span>Genre :</span>  {`${genre}`}</h3>
+      <h4><span>Nationality :</span>  {`${nationality}`}</h4>
+      <h4><span>Date of Birth :</span>  {`${dateofbirth}`}</h4>
+      <h4><span>Year Active :</span>  {`${activefrom}`}</h4>
+  
     </div>
 
   </div>);

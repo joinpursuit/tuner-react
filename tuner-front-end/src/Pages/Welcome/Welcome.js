@@ -3,7 +3,7 @@ import "./Welcome.css";
 const Welcome = () => {
   return (
     <div className="welcome">
-      <h2>Welcome to Tuner API</h2>
+      <h2>Welcome Home</h2>
 
     
     </div>

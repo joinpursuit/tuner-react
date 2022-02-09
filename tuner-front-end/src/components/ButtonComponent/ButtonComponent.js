@@ -18,9 +18,9 @@ const ButtonComponent = () => {
   const handleDelete = () => {
     const deletePost = async () => {
       await axios.delete(API + "/songs/" + id);
-      navigate("/songs/");
     };
     deletePost();
+    navigate("/songs/");
     
   };
 

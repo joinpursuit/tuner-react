@@ -1,4 +1,16 @@
+.gird h2 {
+  display: grid;
+  background-color: cadetblue;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  height: 7vh;
+  padding-top: 1.7rem;
+}
+
 .index {
+  display: grid;
+  grid-template-columns: .2fr .7fr .2fr;
   background-color: rgb(174, 187, 187);
   overflow: auto;
   height: 100vh;
@@ -10,3 +22,22 @@
   font-weight: 900;
   height: 3rem;
 }
+
+/* 
+aside {
+  background-color: cadetblue;
+  height: 75vh;
+  padding: 12rem;
+  border-radius: 12px;
+  border: 1px solid;
+}
+
+.aside-a {
+
+  background-color: rgb(0, 225, 255);
+}
+
+.aside-b {
+
+  background-color: red;
+} */

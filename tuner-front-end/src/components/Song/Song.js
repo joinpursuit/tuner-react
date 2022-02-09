@@ -3,16 +3,20 @@ import { Link } from "react-router-dom";
 import "./Song.css";
 
 const Song = ({ song }) => {
-  const { name, artist, album, id} = song;
+  const { artistname, nationality, activefrom, artistid } = song;
   
   return (
 
     <tr>
-    <td>{name}</td>
-       <td>{artist}</td>
-       <td>{album}</td>
+    <td>{artistname}</td>
+       <td>{nationality}</td>
+       <td>{activefrom}</td>
     <td>
-      <Link to={`/songs/${song.id}`}>🔎</Link>
+      <Link to={`/songs/${artistid}`}>
+        {/* <img src="./Song.png" alt="detail"/> */}
+         
+         
+         🔎</Link>
     </td>
   </tr>
     // <div className="song">

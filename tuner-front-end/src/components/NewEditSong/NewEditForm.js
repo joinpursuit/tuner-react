@@ -2,17 +2,17 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./NewEditForm.css"
+import "./NewEditForm.css";
 
 const API = process.env.REACT_APP_API_URL;
 const NewEditForm = () => {
   let { id } = useParams();
   const [song, setSong] = useState({
-    name: "",
-    artist: "",
-    album: "",
-    time: "",
-    is_favorite: "",
+    artistname: "",
+    genre: "",
+    nationality: "",
+    activefrom: "",
+    dateofbirth: "",
   });
 
   const navigate = useNavigate();
@@ -24,21 +24,10 @@ const NewEditForm = () => {
     };
     fetchData();
   }, []);
-  
-
+console.log(song)
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (song.id) {
-      axios
-        .put(`${API}/songs/${id}`, song)
-
-        .then(() => navigate(`/songs/${id}`));
-    } else {
-      axios
-        .post(`${API}/songs`, song)
-
-        .then(() => navigate(`/songs`));
-    }
+    axios.put(`${API}/songs/${id}`, song).then(() => navigate(`/songs/${id}`));
   };
 
   const handleTextChange = (event) => {
@@ -46,54 +35,54 @@ const NewEditForm = () => {
     setSong({ ...song, [id]: value });
   };
 
-  const handleNevermind = () => navigate(`/songs/`);
+  const handleNevermind = () => navigate(`/songs/${id}`);
 
   return (
     <div className="newSong">
       <form className="newSong-control" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name :</label>
+        <label htmlFor="artistname">Artist Name :</label>
         <input
           type="text"
-          id="name"
-          value={song.name}
+          id="artistname"
+          value={song.artistname}
           onChange={handleTextChange}
           autoComplete="off"
           required
         />
 
-        <label htmlFor="artist">Artist :</label>
+        <label htmlFor="genre">Genre :</label>
         <input
           type="text"
-          id="artist"
-          value={song.artist}
+          id="genre"
+          value={song.genre}
           onChange={handleTextChange}
           autoComplete="off"
           required
         />
 
-        <label htmlFor="album">Album :</label>
+        <label htmlFor="nationality">Nationality :</label>
         <input
-          id="album"
+          id="nationality"
           type="text"
-          value={song.album}
+          value={song.nationality}
           onChange={handleTextChange}
           autoComplete="off"
           required
         />
-        <label htmlFor="time">Time :</label>
+        <label htmlFor="activefrom">Year Active :</label>
         <input
-          id="time"
+          id="activefrom"
           type="number"
-          value={song.time}
+          value={song.activefrom}
           onChange={handleTextChange}
           autoComplete="off"
           required
         />
-        <label htmlFor="is_favorite">Favorite :</label>
+        <label htmlFor="dateofbirth">Date of Birth :</label>
         <input
-          id="is_favorite"
+          id="dateofbirth"
           type="boolean"
-          value={song.is_favorite}
+          value={song.dateofbirth}
           onChange={handleTextChange}
           autoComplete="off"
           required

@@ -6,7 +6,6 @@ const API = process.env.REACT_APP_API_URL;
 
 function SongList() {
   const [songs, setSongs] = useState([]);
-  console.log(API);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,23 +17,23 @@ function SongList() {
     };
     fetchData();
   }, []);
-
+console.log(songs)
   return (
     <>
-<div className="###">
+<div className="songlist">
       <section>
         <table>
           <thead>
             <tr>
-              <th>Song</th>
-              <th>Artist</th>
-              <th>Album</th>
+              <th>Artist Name</th>
+              <th>Nationality</th>
+              <th>Year Active</th>
               <th>Detail</th>
             </tr>
           </thead>
           <tbody>
             {songs.map((song) => {
-              return <Song key={song.id} song={song} />;
+              return <Song key={song.artistid} song={song} />;
             })}
           </tbody>
         </table>
