@@ -1,8 +1,15 @@
-function Song() {
+import { Link } from "react-router-dom";
+
+function Song({ song }) {
   return (
-    <div>
-      <h2>Song</h2>
-    </div>
+    <tr>
+      <td>{song.album}</td>
+      <td>{song.artist}</td>
+      <td>{song.time}</td>
+      <td>
+        <Link to={`songs/${song.id}`}>{song.name}</Link>
+      </td>
+    </tr>
   );
 }
 
