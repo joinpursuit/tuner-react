@@ -25,6 +25,7 @@ const ShowSong = () => {
 
     return (
         <div>
+            {/* <p>Look at all the details for this one song</p> */}
             <p>{song.id}</p>
             <p>{song.name}</p>
             <p>{song.artist}</p>

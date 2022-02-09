@@ -15,6 +15,7 @@ const AllSongs = () => {
 
     return (
         <div>
+            {/* <p>A table with column headings!</p> */}
             <table>
                 <thead>
                     <tr>
