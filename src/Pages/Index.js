@@ -1,4 +1,4 @@
-import AllSongs from "../Functionality/Songs/AllSongs/AllSongs"
+import AllSongs from "../Functionality/Songs/AllSongs"
 
 const index = () => {
     return (

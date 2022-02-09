@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
-import EachSong from "../EachSong"
-import "./AllSongs.css"
+import EachSong from "./EachSong"
 
 const AllSongs = () => {
     const URL = process.env.REACT_APP_API_URL
@@ -25,8 +24,8 @@ const AllSongs = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {songs.map((song, index) => {
-                        return <EachSong key={index} song={song} index={index}/> 
+                    {songs.map((song) => {
+                        return <EachSong key={song.id} song={song} /> 
                     })}
                 </tbody>
             </table>

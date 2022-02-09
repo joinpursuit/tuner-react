@@ -1,10 +1,10 @@
-import ShowSong from "../Functionality/ShowSong"
+import ShowSongDetails from "../Functionality/ShowSongDetails"
 
 const Show = () => {
     return (
         <div>
             <p>Show Page</p>
-            <ShowSong />
+            <ShowSongDetails />
         </div>
     )
 }
