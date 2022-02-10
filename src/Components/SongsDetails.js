@@ -28,7 +28,6 @@ function SongDetails() {
     );
   };
 
-  console.log(song);
   return (
     <div>
       <article className="SongInformation">
