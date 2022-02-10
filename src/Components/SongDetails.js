@@ -9,10 +9,10 @@ function SongDetails() {
   const [song, setSong] = useState({});
 
   useEffect(() => {
+    console.log(API);
     axios
       .get(`${API}/songs/${id}`)
       .then((response) => setSong(response.data))
-      // console.log(`${API}/songs/${id}`)
       .catch((error) => console.warn(error));
   }, [id]);
 
@@ -27,13 +27,15 @@ function SongDetails() {
 
   return (
     <article>
-      <h2>
-        {" "}
-        {song.is_favorite ? "💕" : null} {song.name}
-      </h2>
-      <p>{song.artist}</p>
-      <p>{song.album}</p>
-      <p>{song.time}</p>
+      <div className="songDetail">
+        <h4>
+          '{song.name}' &nbsp;
+          {song.is_favorite ? "is a favorite! ❤️" : null}
+        </h4>
+        <p>Artist : {song.artist}</p>
+        <p>Album: {song.album}</p>
+        <p>Time: {song.time}</p>
+      </div>
       <div className="navigation">
         <div>
           <Link to={"/songs"}>
@@ -46,7 +48,9 @@ function SongDetails() {
           </Link>
         </div>
         <div>
-          <button onClick={handleDelete}>Delete</button>
+          <button className="submit" onClick={handleDelete}>
+            Delete
+          </button>
         </div>
       </div>
     </article>

@@ -7,7 +7,7 @@ function Song({ song }) {
       <td>{song.artist}</td>
       <td>{song.time}</td>
       <td>
-        <Link to={`songs/${song.id}`}>{song.name}</Link>
+        <Link to={`/songs/${song.id}`}>{song.name}</Link>
       </td>
     </tr>
   );

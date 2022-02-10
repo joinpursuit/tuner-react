@@ -4,16 +4,29 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav>
-      <h3>
-        <Link to="/">Let the Music Play</Link>
-      </h3>
-      <h3>
-        <Link to="/songs">SONGS</Link>
-      </h3>
-      <button>
-        <Link to="/songs/new">Add a Song</Link>
-      </button>
+    <nav className="navBar">
+      <ul>
+        <li>
+          <Link to="/">
+            <img
+              src="https://img.favpng.com/22/0/21/house-computer-icons-home-page-png-favpng-qFvEtkK5wHe1Vp785d8CRVNhy.jpg"
+              height="60px"
+              alt="home-page-icon"
+            ></img>
+          </Link>
+        </li>
+        <li>
+          <h3>
+            <Link to="/songs">SONGS</Link>
+          </h3>
+        </li>
+        <li>
+          {" "}
+          <button>
+            <Link to="/songs/new">Add a Song</Link>
+          </button>
+        </li>
+      </ul>
     </nav>
   );
 }

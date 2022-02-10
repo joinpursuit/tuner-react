@@ -85,11 +85,11 @@ function EditForm() {
           onChange={handleCheckboxChange}
           checked={song.is_favorite}
         />
+        <Link to={`/songs/${id}`}>
+          <button>Back</button>
+        </Link>
         <input type="submit" />
       </form>
-      <Link to={`/songs/${id}`}>
-        <button>Back</button>
-      </Link>
     </div>
   );
 }
