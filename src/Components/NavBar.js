@@ -236,6 +236,7 @@ const NavBar = ({update}) => {
               size="large"
               aria-label="show 1 new notifications"
               color="inherit"
+              onClick={handleNewSong}
             >
               <Badge badgeContent={1} color="error">
                 <PlaylistAddIcon />
