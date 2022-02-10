@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 table {
   table-layout: fixed;
   width: 100%;

@@ -49,7 +49,7 @@ const NewSongForm = () => {
 
     return (
         <div>
-            <p>Look at the text fields that pop up in this New Page!</p>
+            {/* <p>Look at the text fields that pop up in this New Page!</p> */}
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name</label>
                 <input 

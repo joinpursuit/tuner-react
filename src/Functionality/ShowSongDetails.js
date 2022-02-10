@@ -28,10 +28,10 @@ const ShowSong = () => {
         <div>
             {/* <p>Look at all the details for this one song</p> */}
             {/* <p>{song.id}</p> */}
-            <p>{song.name}</p>
-            <p>{song.artist}</p>
-            <p>{song.album}</p>
-            <p>{song.time}</p>
+            <p>🎼{song.name} 🎶</p>
+            <p>{song.artist} 🎤</p>
+            <p>{song.album} 💿</p>
+            <p>Time: {song.time}</p>
             {/* <p>{song.is_favorite}</p> */}
             <Link to={`/songs/${id}/edit`}><button>edit</button></Link>
             <Link to={"/songs"}><button>back</button></Link>

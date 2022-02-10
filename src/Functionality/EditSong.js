@@ -66,7 +66,7 @@ const EditSong = () => {
 
     return (
         <div>
-            <p>Look at all the text box fields that pop up to edit the song</p>
+            {/* <p>Look at all the text box fields that pop up to edit the song</p> */}
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name</label>
                 <input 
