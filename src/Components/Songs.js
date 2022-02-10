@@ -14,7 +14,7 @@ export default function Songs() {
     }, [API]);
 
     return (
-        <div>
+        <div className="Songs">
             {songs.map((song) => {
                 return <Song key={song.id} song={song} />
             })}

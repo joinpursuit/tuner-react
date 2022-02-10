@@ -2,8 +2,8 @@ import SongNewForm from '../Components/SongNewForm';
 
 export default function New() {
     return (
-        <div>
-            <h2>New Form Page</h2>
+        <div className='form-page'>
+            <h2>New Song Page</h2>
             <SongNewForm />
         </div>
     );

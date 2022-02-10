@@ -2,8 +2,7 @@ import SongDetails from '../Components/SongDetails';
 
 export default function Show() {
     return (
-        <div>
-            <h2>The Show Page!</h2>
+        <div className='show-page'>
             <SongDetails />
         </div>
     );

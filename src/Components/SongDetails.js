@@ -26,17 +26,24 @@ export default function SongDetails() {
 
     return (
         <div>
-            <p>{title} — {artist}</p>
-
-            <Link to='/songs'>
-                <button>Go Back to Songs</button>
-            </Link>
-
-            <Link to={`/songs/${id}/edit`}>
-                <button>Edit Song</button>
-            </Link>
-
-            <button onClick={handleDelete}>Delete Song</button>
+            <div className="card">
+                <h3 className="card-header">{title} - {artist}</h3>
+                <p>Album: {album}</p>
+                <p>Time: {length}</p>    
+                <p>Loved: {is_favorite ? '♥️' : '💔'}</p>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div className="buttons">
+                <Link to='/songs'>
+                    <button>Go Back to Songs</button>
+                </Link>
+                <Link to={`/songs/${id}/edit`}>
+                    <button>Edit Song</button>
+                </Link>
+                <button onClick={handleDelete}>Delete Song</button>
+            </div>
         </div>
     );
 };

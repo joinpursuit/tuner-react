@@ -36,7 +36,7 @@ export default function SongNewForm() {
     };
 
     return (
-        <div className="New">
+        <div>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">title:</label>
                     <input
@@ -51,7 +51,6 @@ export default function SongNewForm() {
                     <input
                         id="artist"
                         type="text"
-                        // pattern="http[s]*://.+"
                         required
                         value={artist}
                         placeholder="songs's artist"
@@ -86,6 +85,10 @@ export default function SongNewForm() {
                 <button type="submit">Submit</button>
             </form>
 
+            <br />
+            <hr />
+            <br />
+            
             <Link to={`/songs`}>
                 <button>Never mind!</button>
             </Link>

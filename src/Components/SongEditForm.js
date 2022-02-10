@@ -45,7 +45,7 @@ export default function SongEditForm() {
 
     const updateSong = (updatedSong, id) => {
         axios
-            .put(`${API}/songs/${id}`)
+            .put(`${API}/songs/${id}`, updatedSong)
             .then(() => navigate(`/songs/${id}`), (error) => console.error(error))
             .catch((error) => console.warn("warn", error));
     }
@@ -102,6 +102,10 @@ export default function SongEditForm() {
                 <br />
                 <button type="submit">Submit</button>
             </form>
+
+            <br />
+            <hr />
+            <br />
 
             <Link to={`/songs/${id}`}>
                 <button>Never mind!</button>
