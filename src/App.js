@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
-function App() {
+import NavBar from './Components/NavBar';
+import Home from "./Pages/Home"
+import Index from "./Pages/Index"
+import Show from "./Pages/Show"
+import New from "./Pages/New"
+
+import { useState } from "react";
+
+
+const App = () => {
+  //useState at the parent level to capture updates on the total
+  const [update, setUpdate] = useState()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar update={update}/>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/songs" element={<Index parentCallBack={setUpdate} />}/>
+        <Route exact path="/songs/:id" element={<Show />} />
+        <Route path="/songs/new" element={<New />} />
+      </Routes>
     </div>
   );
 }
