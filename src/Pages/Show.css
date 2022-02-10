@@ -1,7 +1,9 @@
 .Show {
-    background-color: lightgrey;
+    background-color: lightgray;
     height: calc(100% - 80px);
-}
-.Show h1 {
+    padding: 20px;
+  }
+  .Show h1 {
     margin: 0;
-}
+    margin-bottom: 20px;
+  }

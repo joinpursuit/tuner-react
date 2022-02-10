@@ -1,14 +1,14 @@
 import React from 'react';
-import './Show.css'
+import './Show.css';
+import DisplaySong from '../Components/DisplaySong';
 
-import DisplaySong from "../Components/DisplaySong"
-
-function Show() {
-    return (
-        <div className='Show'>
-            <DisplaySong />
-        </div>
-    );
-}
+const Show = () => {
+  return (
+    <div className="Show">
+      <h1> Song Info </h1>
+      <DisplaySong />
+    </div>
+  );
+};
 
 export default Show;
