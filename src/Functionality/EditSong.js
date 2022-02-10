@@ -105,7 +105,6 @@ const EditSong = () => {
                 id="is_favorite"
                 type="checkbox"
                 onChange={handleCheckboxChange}
-                // checked={song.is_favorite}
                 />
             </form>
             <button onClick={handleSubmit}>submit</button>
