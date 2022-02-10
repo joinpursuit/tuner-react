@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React from 'react';
+import './Song.css'
 
 const Song = ({ song: {name, artist, time, is_favorite, id}}) => {
     return (
