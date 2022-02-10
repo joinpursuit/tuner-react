@@ -5,6 +5,7 @@ import SongForm from '../Components/SongForm';
 const Edit = () => {
   return (
     <div className="Edit">
+      <h1>Edit Song</h1>
       <SongForm />
     </div>
   );

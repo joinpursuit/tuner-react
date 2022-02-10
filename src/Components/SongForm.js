@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import './SongForm.css';
 
 const SongForm = () => {
   const [song, setSong] = useState({
@@ -31,69 +33,79 @@ const SongForm = () => {
     setSong({ ...song, [event.target.id]: !song.is_favorite });
   };
 
-  const handleEdit = () => {
-    console.log('Edit');
+  const handleEdit = async (event) => {
+    event.preventDefault();
+    await axios.put(`${URL}/songs/${id}`, song);
+    navigate(`/songs/${id}`);
   };
 
-  const handleNew = () => {
-    console.log('New');
+  const handleNew = async (event) => {
+    event.preventDefault();
+    await axios.post(`${URL}/songs`, song);
+    await navigate('/songs');
   };
 
   return (
     <div className="SongForm">
-      <h1>{isEdit ? 'Edit Song' : 'New Song'}</h1>
-      <form onSubmit={isEdit ? handleEdit : handleNew}>
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
-          value={song.name}
-          name="name"
-          type="text"
-          placeholder="Name"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="artist">Artist</label>
-        <input
-          id="artist"
-          value={song.artist}
-          name="artist"
-          type="text"
-          placeholder="Artist"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="album">Album</label>
-        <input
-          id="album"
-          value={song.album}
-          name="album"
-          type="text"
-          placeholder="Album"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="time">Time</label>
-        <input
-          id="time"
-          value={song.time}
-          name="time"
-          type="text"
-          placeholder="Time"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="is_favorite">Favorite</label>
-        <input
-          id="is_favorite"
-          checked={song.is_favorite}
-          name="is_favorite"
-          type="checkbox"
-          onChange={handleCheckChange}
-        />
-        <div className="buttons">
+      <Form
+        // style={{ width: '500px',  }}
+        onSubmit={isEdit ? handleEdit : handleNew}
+      >
+        <Form.Group className="form form-dark mx-5 border border-dark p-3">
+          <Form.Label htmlFor="name">Name</Form.Label>
+          <Form.Control
+            id="name"
+            value={song.name}
+            name="name"
+            type="text"
+            placeholder="Name"
+            onChange={handleInputChange}
+          />
+          <Form.Label htmlFor="artist">Artist</Form.Label>
+          <Form.Control
+            id="artist"
+            value={song.artist}
+            name="artist"
+            type="text"
+            placeholder="Artist"
+            onChange={handleInputChange}
+          />
+          <Form.Label htmlFor="album">Album</Form.Label>
+          <Form.Control
+            id="album"
+            value={song.album}
+            name="album"
+            type="text"
+            placeholder="Album"
+            onChange={handleInputChange}
+          />
+          <Form.Label htmlFor="time">Time</Form.Label>
+          <Form.Control
+            id="time"
+            value={song.time}
+            name="time"
+            type="text"
+            placeholder="Time"
+            onChange={handleInputChange}
+          />
+          <Form.Label htmlFor="is_favorite">Favorite</Form.Label>
+          <Form.Check
+            id="is_favorite"
+            checked={song.is_favorite}
+            name="is_favorite"
+            type="checkbox"
+            onChange={handleCheckChange}
+          />
+        </Form.Group>
+        <div className="buttons mt-4 justify-content-end">
           <Link to={isEdit ? `/songs/${id}` : '/songs'}>
-            <button>Back</button>
+            <button className="btn btn-dark">Back</button>
           </Link>
-          <button type="submit">Submit</button>
+          <button className="btn btn-dark mx-3" type="submit">
+            Submit
+          </button>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };

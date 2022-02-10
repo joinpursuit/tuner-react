@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-
+import './DisplaySong';
 import axios from 'axios';
+import { Card } from 'react-bootstrap';
 
 const DisplaySong = () => {
   const [song, setSong] = useState({});
@@ -26,19 +27,37 @@ const DisplaySong = () => {
 
   return (
     <div className="DisplaySong">
-      <h1>Name: {name}</h1>
-      <h2>Artist: {artist}</h2>
-      <h2>Album: {album}</h2>
-      <h2>Time: {time}</h2>
-      <h2>Favorite: {is_favorite ? 'Yes' : 'No'}</h2>
-      <div className="buttons">
+      <table className="table table-striped table-bordered table-dark">
+        <thead>
+          <tr>
+            <td>Name: {name}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Artist: {artist}</td>
+          </tr>
+          <tr>
+            <td>Album: {album}</td>
+          </tr>
+          <tr>
+            <td>Time: {time}</td>
+          </tr>
+          <tr>
+            <td>Favorite: {is_favorite ? 'Yes' : 'No'}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div className="buttons mt-5">
         <Link to="/songs">
-          <button>Back</button>
+          <button className="btn btn-dark mx-3">Back</button>
         </Link>
         <Link to={`/songs/${id}/edit`}>
-          <button>Edit</button>
+          <button className="btn btn-dark mx-3">Edit</button>
         </Link>
-        <button onClick={handleDelete}>Delete</button>
+        <button className="btn btn-dark mx-3" onClick={handleDelete}>
+          Delete
+        </button>
       </div>
     </div>
   );

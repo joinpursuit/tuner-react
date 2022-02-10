@@ -5,6 +5,7 @@ import DisplaySong from '../Components/DisplaySong';
 const Show = () => {
   return (
     <div className="Show">
+      <h1> Song Info </h1>
       <DisplaySong />
     </div>
   );

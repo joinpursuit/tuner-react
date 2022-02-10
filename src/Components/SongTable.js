@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Song from './Song';
+import './SongTable.css';
 
 const SongTable = () => {
   const [songs, setSongs] = useState([]);
@@ -15,10 +16,10 @@ const SongTable = () => {
     getSongs();
   }, [URL]);
 
-  const tableRows = songs.map((e) => <Song song={e} />);
+  const tableRows = songs.map((e, i) => <Song song={e} key={'song' + i} />);
   return (
     <div className="SongTable">
-      <table>
+      <table className="table table-striped table-bordered table-dark">
         <thead>
           <tr>
             <td>Name</td>

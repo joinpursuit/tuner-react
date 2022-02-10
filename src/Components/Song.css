@@ -1,0 +1,12 @@
+.Song a,
+.Song a:visited,
+.Song a:active {
+  text-decoration: none;
+  color: white;
+  transition: ease 0.4s;
+}
+
+.Song a:hover {
+  color: grey;
+  transition: ease 0.4s;
+}

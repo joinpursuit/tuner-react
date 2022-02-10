@@ -14,3 +14,35 @@
 .Nav h1 {
   margin: 0;
 }
+
+.Nav a,
+.Nav a:visited,
+.Nav a:active {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: ease 0.4s;
+}
+.Nav a:hover {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  transition: ease 0.4s;
+}
+
+.Nav button {
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 1.2em;
+  padding: 10px;
+  cursor: pointer;
+  transition: ease 0.4s;
+}
+.Nav button:hover {
+  color: gray;
+  border: 2px solid gray;
+  transition: ease 0.4s;
+}

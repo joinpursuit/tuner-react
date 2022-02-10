@@ -1,7 +1,9 @@
 .New {
   background-color: lightgray;
   height: calc(100% - 80px);
+  padding: 20px;
 }
 .New h1 {
   margin: 0;
+  margin-bottom: 20px;
 }

@@ -1,7 +1,9 @@
 .Index {
   background-color: lightgray;
   height: calc(100% - 80px);
+  padding: 20px;
 }
 .Index h1 {
   margin: 0;
+  margin-bottom: 20px;
 }
