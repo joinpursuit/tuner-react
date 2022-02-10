@@ -49,7 +49,7 @@ const Details = () => {
         <p className="row mb-4">
           <span className="col p-2 text-white">{song.time}</span>
           <span className="col p-2 text-white">
-            {song.is_favorite ? ":heart:" : ":white_heart:"}
+            {song.is_favorite ? "❤️" : "🤍"}
           </span>
         </p>
         <hr className=""></hr>

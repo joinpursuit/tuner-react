@@ -33,10 +33,10 @@ const Songs = ({ parentCallBack }) => {
         <table className="container">
           <thead className="row">
             <tr className="d-flex justify-content-between text-white pb-2">
-              <td className="col-2">Favorites</td>
-              <td className="col-7">Title</td>
-              <td className="col-2">Artist</td>
-              <td className="col-2">Time</td>
+              <td className="col-auto">Favorites</td>
+              <td className="col-auto">Title</td>
+              <td className="col-auto">Artist</td>
+              <td className="col-auto">Time</td>
             </tr>
           </thead>
           <tbody className="row">

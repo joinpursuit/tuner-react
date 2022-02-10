@@ -12,7 +12,7 @@ const Format = ({ song }) => {
             className="col-1 float-start p-2 text-nowrap text-white mt-1"
             style={{ overflowX: "scroll" }}
           >
-            {song.is_favorite ? ":heart:" : ":white_heart:"}
+            {song.is_favorite ? "❤️" : "🤍"}
           </span>
           <span
             className="col-5 bg-outline-secondary text-dark text-nowrap d-inline-flex justify-content-center ms-2 me-2"
@@ -30,7 +30,12 @@ const Format = ({ song }) => {
             className="col-auto bg-outline-secondary text-dark text-nowrap d-inline-flex justify-content-center ms-2 me-2"
             style={{ overflowX: "scroll" }}
           >
-            {song.time}
+            <span
+              className="col-auto bg-outline-secondary text-dark text-nowrap d-inline-flex justify-content-center ms-2 me-2"
+              style={{ overflowX: "scroll" }}
+            >
+              {song.time}
+            </span>
           </span>
         </Link>
       </td>
