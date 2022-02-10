@@ -1,0 +1,7 @@
+.Error {
+    background-color: lightgrey;
+    height: calc(100% - 80px);
+}
+.Error h1 {
+    margin: 0;
+}

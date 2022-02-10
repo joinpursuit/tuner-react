@@ -1,9 +1,10 @@
-import React from 'react';
+import ErrorMsg from '../Components/ErrorMsg';
+import './Error.css'
 
 function Error() {
   return (
     <div>
-        Error
+        <ErrorMsg />
     </div>);
 }
 
