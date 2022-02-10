@@ -11,10 +11,12 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
+import Avatar from '@mui/material/Avatar';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import appLogo from "../assets/pandoraLogo.png"
+import avatarLogo from "../assets/3.png"
+import Button from '@mui/material/Button';
 
 //React Router
 import { useNavigate } from "react-router-dom"
@@ -95,7 +97,7 @@ const NavBar = ({update}) => {
     return navigate("/songs/new");
   }
 
-  const handleCollectionsMenu = () => {
+  const handleStationMenu = () => {
     return navigate("/songs");
   }
   
@@ -159,13 +161,13 @@ const NavBar = ({update}) => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={handleCollectionsMenu}>
+      <MenuItem onClick={handleStationMenu}>
         <IconButton size="large" aria-label={`show ${display} new mails`} color="inherit">
           <Badge badgeContent={display} color="primary" >
             <QueueMusicIcon />
           </Badge>
         </IconButton>
-        <p>My Collections</p>
+        <Button color="secondary">My Station</Button>
       </MenuItem>
       <MenuItem onClick={handleNewSong}>
         <IconButton
@@ -177,7 +179,7 @@ const NavBar = ({update}) => {
             <PlaylistAddIcon />
           </Badge>
         </IconButton>
-        <p>Add a Song</p>
+        <Button color="secondary">Add a Song</Button>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -187,9 +189,9 @@ const NavBar = ({update}) => {
           aria-haspopup="true"
           color="inherit"
         >
-          <HomeIcon />
+          <Avatar alt="Cindy Baker" src={avatarLogo} />
         </IconButton>
-        <p>Home</p>
+        <Button color="secondary">Account</Button>
       </MenuItem>
     </Menu>
   );
@@ -227,21 +229,23 @@ const NavBar = ({update}) => {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label={`show ${display} new mails`} color="inherit" onClick={handleCollectionsMenu}>
-              <Badge badgeContent={display} color="error">
+            <IconButton size="large" aria-label={`show ${display} new mails`} color="inherit" onClick={handleStationMenu}>
+              <Badge badgeContent={display} color="primary">
                 <QueueMusicIcon />
               </Badge>
             </IconButton>
+            <Button color="inherit" onClick={handleStationMenu}>My Station</Button>
             <IconButton
               size="large"
               aria-label="show 1 new notifications"
               color="inherit"
               onClick={handleNewSong}
             >
-              <Badge badgeContent={1} color="error">
+              <Badge badgeContent={1} color="primary">
                 <PlaylistAddIcon />
               </Badge>
             </IconButton>
+            <Button color="inherit" onClick={handleNewSong}>Add a Song</Button>
             <IconButton
               size="large"
               edge="end"
@@ -251,7 +255,7 @@ const NavBar = ({update}) => {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <HomeIcon />
+              <Avatar alt="Cindy Baker" src={avatarLogo} />
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

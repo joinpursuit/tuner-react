@@ -26,7 +26,7 @@ const Details = () => {
 
     
     return (
-        <article className="container p-5 my-5 bg-warning text-dark rounded">
+        <article className="container p-5 my-5 bg-primary text-dark rounded">
             <div className="container">
                 <h1 className="text-white mb-3">{song.name}</h1>
                 <h4 className="row">

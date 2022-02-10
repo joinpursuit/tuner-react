@@ -50,7 +50,7 @@ const NewForm = () => {
 
 
     return (
-        <div className="New container p-5 my-5 bg-warning text-dark rounded" style={{overflowX: "scroll"}}>
+        <div className="New container p-5 my-5 bg-primary text-dark rounded" style={{overflowX: "scroll"}}>
             <h2 className="text-white mb-5">New Song</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-floating mb-2 mt-2">
@@ -114,7 +114,7 @@ const NewForm = () => {
                     </label>
                 </div>
                 <br />
-                <button className="btn btn-primary">Submit</button>
+                <button className="btn btn-success">Submit</button>
             </form>
             <Link to={`/songs`}>
                 <button className="btn btn-danger mt-3">Delete</button>

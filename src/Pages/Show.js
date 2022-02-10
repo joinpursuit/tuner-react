@@ -1,8 +1,10 @@
+import './Show.css';
+
 import Details from "../Components/Details";
 
 const Show = () => {
   return (
-    <div className="Show container p-5 my-5 bg-dark text-white text-center">
+    <div className="Show">
       <h2>Song Details</h2>
       <Details />
     </div>

@@ -1,7 +1,20 @@
+import './Home.css';
+
+import { Link } from "react-router-dom"
+
+import Radio from "../assets/Radio.png" 
+
 const Home = () => {
+ 
     return (
       <div className="Home">
-        <h1 className="container p-5 my-5 bg-dark text-white text-center">Playlist Tuner App</h1>
+        <div className=''>
+          <h1>Welcome, Cindy! </h1>
+          <Link to={`/songs`}>
+            <img className="radio" alt="radio" src={Radio}/>
+          </Link>          
+          <h1>Tune your station</h1>
+        </div>
       </div>
     );
   }

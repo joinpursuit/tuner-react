@@ -1,0 +1,21 @@
+.Index {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(#7B79C6 0%, rgba(11, 69, 247, 0.81));
+  background-size:cover;
+  background-repeat: no-repeat;
+  height:100%;
+  color: #E6B1FF;
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.Songs section {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
