@@ -19,6 +19,9 @@ main {
   margin: auto;
 }
 
+
+/* anime-reviews-front-end-starting-point 
+ css starts */
 table {
   width: 80%;
   margin: auto;
@@ -36,3 +39,6 @@ tbody td:not(td:first-of-type):hover {
 tbody tr:nth-child(even) {
   background: #3e5e6740;
 }
+
+/* anime-reviews-front-end-starting-point 
+ css ends */

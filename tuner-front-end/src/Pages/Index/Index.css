@@ -6,6 +6,7 @@
   margin: 0;
   height: 7vh;
   padding-top: 1.7rem;
+  background-color: rgb(174, 187, 187);
 }
 
 .index {
@@ -23,21 +24,26 @@
   height: 3rem;
 }
 
-/* 
-aside {
+
+/* aside {
   background-color: cadetblue;
   height: 75vh;
   padding: 12rem;
   border-radius: 12px;
   border: 1px solid;
-}
+} */
 
-.aside-a {
+/* .aside-a {
+  background-color: cadetblue;
+  height: 75vh;
+  padding: 12rem;
+  border-radius: 12px;
+  border: 1px solid;
+  background-color: rgb(174, 187, 187);
 
-  background-color: rgb(0, 225, 255);
-}
+} */
 
-.aside-b {
+/* .aside-b {
 
   background-color: red;
-} */
+}  */

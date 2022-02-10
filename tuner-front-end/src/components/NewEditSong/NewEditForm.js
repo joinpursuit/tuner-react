@@ -13,6 +13,7 @@ const NewEditForm = () => {
     nationality: "",
     activefrom: "",
     dateofbirth: "",
+    skill: ""
   });
 
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ console.log(song)
   return (
     <div className="newSong">
       <form className="newSong-control" onSubmit={handleSubmit}>
+      <br />
         <label htmlFor="artistname">Artist Name :</label>
         <input
           type="text"
@@ -87,8 +89,17 @@ console.log(song)
           autoComplete="off"
           required
         />
-        <br />
-
+    
+        <label htmlFor="skill">Skill :</label>
+        <input
+          id="skill"
+          type="boolean"
+          value={song.skill}
+          onChange={handleTextChange}
+          autoComplete="off"
+          required
+        />
+      
         <input type="submit" className="form-submit" />
       </form>
       <button onClick={handleNevermind} className="form-nevermind">

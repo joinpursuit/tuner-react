@@ -2,6 +2,7 @@
     background-color: rgb(174, 187, 187);
     overflow: auto;
     height: 95vh;
+
   }
   
   .show h2 {
@@ -9,5 +10,7 @@
     font-size: 1.9rem;
     font-weight: 900;
     height: 3rem;
+    margin-bottom: 0;
+    
   }
   

@@ -7,6 +7,9 @@
   margin: 3rem 25rem;
   padding-left: 0;
   background-color: rgba(166, 198, 181, 0.689);
+  position: relative;
+  top: -7rem;
+  margin-bottom: 0;
 }
 
 .song-detail h3 {
@@ -43,4 +46,22 @@
 .song-detail h4:hover {
   border-radius: 12px;
   transform: scale(1.12);
+}
+aside h2 {
+ text-align: left;
+ margin-right:70rem ;
+ border-bottom: 2px solid gray;
+ color: rgba(38, 44, 38, 0.326);
+ font-family:'AmstelvarAlpha';
+}
+
+.grid {
+  position: relative;
+  top: 5rem;
+  margin-left:3rem ;
+}
+
+li {
+  list-style-type: square;
+  font-family: Courier, Monaco, monospace;
 }
