@@ -10,7 +10,6 @@ function SongDetails() {
   //use the tool params, to grab the id that will be listed in the url
   const { id } = useParams();
   //will render as an object even if the useState is an array
-  const [song, setSong] = useState([]);
   const [song, setSong] = useState({});
 
   useEffect(() => {
@@ -36,12 +35,15 @@ function SongDetails() {
         <p>Name:{song.name}</p>
         <p>Artist: {song.artist}</p>
         <p>Album: {song.album}</p>
+        <p>Favorite: {song.is_favorite}</p>
       </article>
       <Link to={`/songs/${song.id}/edit`}>
         <button>Update</button>
       </Link>
       <button onClick={handleDelete}>Delete</button>
-      <button>Back</button>
+      <Link to={`/songs/`}>
+        <button>Back</button>
+      </Link>
     </div>
   );
 }
