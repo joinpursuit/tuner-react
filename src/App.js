@@ -10,6 +10,7 @@ import NavBar from "./Components/NavBar";
 import AllSongs from "./Components/AllSongs";
 import SongDetails from "./Components/SongsDetails";
 import SongEdit from "./Components/SongEdit";
+import NewSong from "./Components/NewSong";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/songs" element={<AllSongs />} />
         <Route path="/songs/:id" element={<SongDetails />} />
         <Route path="/songs/:id/edit" element={<SongEdit />} />
+        <Route path="songs/new" element={<NewSong />} />
       </Routes>
     </div>
   );
