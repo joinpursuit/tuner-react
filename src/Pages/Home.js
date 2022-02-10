@@ -13,7 +13,7 @@ const Home = () => {
           <Link to={`/songs`}>
             <img className="radio" alt="radio" src={Radio}/>
           </Link>          
-          <h1>Tune your station</h1>
+          <h1>Fine tune your station</h1>
         </div>
       </div>
     );

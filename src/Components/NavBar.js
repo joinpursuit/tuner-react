@@ -162,7 +162,10 @@ const NavBar = ({update}) => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem onClick={handleStationMenu}>
-        <IconButton size="large" aria-label={`show ${display} new mails`} color="inherit">
+        <IconButton 
+          size="large" 
+          aria-label={`show ${display} new mails`} 
+          color="inherit">
           <Badge badgeContent={display} color="primary" >
             <QueueMusicIcon />
           </Badge>
@@ -210,14 +213,6 @@ const NavBar = ({update}) => {
           >
             <img src={appLogo} alt="app-logo" style={{width: "40px"}} />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-
-          </Typography>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -229,7 +224,11 @@ const NavBar = ({update}) => {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label={`show ${display} new mails`} color="inherit" onClick={handleStationMenu}>
+            <IconButton 
+              size="large" 
+              aria-label={`show ${display} new mails`} 
+              color="inherit" 
+              onClick={handleStationMenu}>
               <Badge badgeContent={display} color="primary">
                 <QueueMusicIcon />
               </Badge>

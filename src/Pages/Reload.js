@@ -1,7 +1,9 @@
+import './Reload.css';
+
 const Reload = () => {
     return (
-      <div className="container p-5 my-5 bg-dark text-white text-center">
-        <h1>Sorry, no page found</h1>
+      <div className="Reload pt-3">
+        <h1 className='pt-3 pb-3'>Sorry, no page found</h1>
       </div>
     );
   }

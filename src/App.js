@@ -6,6 +6,7 @@ import Home from "./Pages/Home"
 import Index from "./Pages/Index"
 import Show from "./Pages/Show"
 import New from "./Pages/New"
+import Reload from "./Pages/Reload"
 
 import { useState } from "react";
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/songs" element={<Index parentCallBack={setUpdate} />}/>
         <Route exact path="/songs/:id" element={<Show />} />
         <Route path="/songs/new" element={<New />} />
+        <Route path="*" element={<Reload />} />
       </Routes>
     </div>
   );
