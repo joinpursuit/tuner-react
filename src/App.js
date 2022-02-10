@@ -9,6 +9,7 @@ import Home from "./Pages/Home";
 import NavBar from "./Components/NavBar";
 import AllSongs from "./Components/AllSongs";
 import SongDetails from "./Components/SongsDetails";
+import SongEdit from "./Components/SongEdit";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/songs" element={<AllSongs />} />
         <Route path="/songs/:id" element={<SongDetails />} />
+        <Route path="/songs/:id/edit" element={<SongEdit />} />
       </Routes>
     </div>
   );
