@@ -24,7 +24,6 @@ function App() {
             {/* <Route path='/songs/:id/edit' element={ <Edit />} /> */}
             <Route path='*' element={<Reload />} />
           </Routes>
-      {/* <Footer /> */}
 
     </div>
   );
