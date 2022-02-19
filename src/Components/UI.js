@@ -8,20 +8,20 @@ export default function UI() {
             
             <button >
                 <Link
-                style={{ color: "white" }}
-                to='/transactions'>INDEX PAGE</Link>
+                style={{ color: "#ff00ff" }}
+                to='/songs'>INDEX PAGE</Link>
             </button>
 
             <button >
                 <Link
-                style={{ color: "white" }}
+                style={{ color: "#ff00ff" }}
                 to='/'>HOME</Link>
             </button>
 
             <button >
-                <a
-                style={{ color: "white" }}
-                href='/transactions/new'>NEW</a>
+                <Link
+                style={{ color: "#ff00ff" }}
+                href='/songs/new'>NEW</Link>
             </button>
             
         </nav>

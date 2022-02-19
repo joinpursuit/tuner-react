@@ -4,10 +4,10 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import React from "react";
 
 function ShowSongs() {
-  const navigate = useNavigate();
   const URL = process.env.REACT_APP_API_URL;
   const [song, setSong] = useState({});
   // console.log(songs)
+  const navigate = useNavigate();
   // useParams returns an object that we can deconstruct from.
   let { id } = useParams();
 
@@ -30,7 +30,7 @@ function ShowSongs() {
     axios
       .delete(`${URL}/songs/${id}`)
       // redirect them to /songs
-      .then(() => navigate("/songs"))
+      .then(() => navigate(`/songs`))
       .catch((error) => console.warn(error));
   };
 
@@ -64,13 +64,13 @@ function ShowSongs() {
           <div className="showNavigation">
             <div>
               {" "}
-              <Link to={"/songs"}>
+              <Link to={`/songs`}>
                 <button className="button back">Back</button>
               </Link>
             </div>
 
             <div>
-              <Link to={`/songs/${song.id}/edit`}>
+              <Link to={`/songs/${id}/edit`}>
                 <button>Edit</button>
               </Link>
             </div>

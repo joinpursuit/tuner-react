@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 function Home() {
     return (
         <div className="Home">
-            <br /> 
-            <br />
-            <br />
-            <fieldset style={{ color: "#66A3A3"}}>
-                <legend>Welcome to</legend>
+            
+            <fieldset style={{ color: "#ff00ff"}}>
+                {/* <legend 
+                >Welcome to</legend> */}
                 <br />
                 <br />
-                <h1 style={{textAlign: "center", color: "gray"}}>
+                <h1 style={{textAlign: "center", color: "ff00ff"}}>
                     Tuner App
                 </h1>
 

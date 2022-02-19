@@ -4,7 +4,10 @@ function NewForm() {
 
     return (
         <div className="Form">
-            <n2>New</n2>
+            <p
+                style={{ color: "#ff00ff" }}
+             >
+                Create a New Item</p>
             <Form />
         </div>
 

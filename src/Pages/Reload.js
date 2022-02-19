@@ -8,7 +8,7 @@ const Reload = () => {
 
             <h1 
             className="reload message"
-            style={{ textAlign: 'center'}}>
+            style={{ textAlign: 'center', color: '#0033cc'}}>
             'No Page Found'
             </h1>
         </div>

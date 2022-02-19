@@ -4,13 +4,13 @@ function Song({ song }) {
   // console.log(song);
   return (
     <tr>
-      <td>
+      {/* <td>
         {song.is_favorite ? (
           <span>{song.name}</span>
         ) : (
           <span>&nbsp; &nbsp; &nbsp;</span>
         )}
-      </td>
+      </td> */}
       <td></td>
       <td>
         <Link 

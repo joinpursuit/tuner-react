@@ -10,7 +10,8 @@ function Songs() {
   useEffect(() => {
     axios
       .get(`${URL}/songs`)
-      .then((response) => {console.log(response.data)
+      .then((response) => {
+        // console.log(response.data)
     return setSongs(response.data)})
       .catch((error) => console.warn(error));
   }, [URL]);
@@ -24,8 +25,8 @@ function Songs() {
             id={id}
             key={id}
         />
-    )}
-)
+    )
+  })
 
   return (
     <div className="container">
