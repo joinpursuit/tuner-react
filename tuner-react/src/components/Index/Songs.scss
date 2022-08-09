@@ -1,0 +1,16 @@
+.indexSection {
+  margin: 5% auto;
+
+  .newSongButton {
+    height: 100%;
+  }
+
+  .songLink {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      color: cyan;
+    }
+  }
+}

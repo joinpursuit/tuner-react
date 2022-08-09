@@ -5,16 +5,20 @@ import "./NavBar.scss";
 
 const NavBar = () => {
   return (
-    <header className="tunerHeader navbar-dark bg-dark">
-      <nav>
-        <Link to={`/`} className="tunerHomepage">
-          <h3>Tuner App</h3>
+    <nav className="navbar">
+      <div className="navbarLinks">
+        <Link to="/">
+          <Button variant="outline-dark" className="tunerLink">
+            Home
+          </Button>
         </Link>
         <Link to="/songs">
-          <Button variant="outline-light">Songs</Button>
+          <Button variant="outline-dark" className="tunerLink">
+            Songs
+          </Button>
         </Link>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 };
 

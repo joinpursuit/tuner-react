@@ -1,0 +1,37 @@
+.tunerHeader {
+  text-align: center;
+  color: white;
+
+  .tunerTitle {
+    animation: tunerHomepageAnimation 10s ease-in-out infinite;
+    @keyframes tunerHomepageAnimation {
+      0% {
+        color: white;
+      }
+      25% {
+        color: red;
+      }
+      50% {
+        color: blue;
+      }
+      100% {
+        color: white;
+      }
+    }
+  }
+}
+
+.tunerMain {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  text-align: center;
+
+  .tunerRoutesSection {
+    grid-column: 2;
+
+    .SectionHeader {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
