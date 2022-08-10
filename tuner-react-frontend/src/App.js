@@ -5,6 +5,7 @@ import Nav from "./components/Nav.js";
 import Index from "./pages/Index.js";
 import Show from "./pages/Show.js";
 import New from "./pages/New.js";
+import Edit from "./pages/Edit";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/songs" element={<Index />} />
         <Route path="/songs/new" element={<New />} />
+        <Route path="songs/:id/edit" element={<Edit />} />
         <Route path="/songs/:id" element={<Show />} />
       </Routes>
     </div>

@@ -41,6 +41,9 @@ function SongDetail() {
         <button>
           <Link to="/songs">Back</Link>
         </button>
+        <button>
+          <Link to={`/songs/${id}/edit`}>Edit</Link>
+        </button>
         <button onClick={handleDelete}>Delete</button>
       </div>
     </section>
