@@ -26,10 +26,10 @@ function Songs() {
       <table>
         <thead>
           <tr>
-            <th>Fav</th>
-            <th>Song</th>
+            <th>Name</th>
             <th>Artist</th>
             <th>Time</th>
+            <th>Fav</th>
           </tr>
         </thead>
         <tbody>

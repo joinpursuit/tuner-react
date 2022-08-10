@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 function Nav() {
   return (
     <nav>
       <Link to="/songs">
-        <h1>Index Page</h1>
+        <h1 className="indexPage">Index Page</h1>
       </Link>
     </nav>
   );
