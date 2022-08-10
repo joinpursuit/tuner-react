@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 //get the API url
 const API = process.env.REACT_APP_API_URL;
-console.log("API", API);
 
 function Songs() {
   const [songs, setSongs] = useState([]);

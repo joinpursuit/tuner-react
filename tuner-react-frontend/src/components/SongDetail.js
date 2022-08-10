@@ -8,6 +8,8 @@ function SongDetail() {
   const { id } = useParams(); //get the id of the song from browser url
   const [song, setSong] = useState({});
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     axios
       .get(`${API}/songs/${id}`)
@@ -17,13 +19,30 @@ function SongDetail() {
       .catch((error) => console.error("catch", error));
   }, [id]);
 
+  const handleDelete = () => {
+    axios
+      .delete(`${API}/songs/${id}`)
+      .then((response) => {
+        navigate("/songs");
+      })
+      .catch((error) => console.error("catch", error));
+  };
+
   return (
     <section className="Song-Details">
-      <h3>Name: {song.name}</h3>
-      <div>Artist: {song.artist}</div>
-      <div>Album: {song.album}</div>
-      <div>Time: {song.time}</div>
-      <div>Favorite: {song.is_favorite ? "⭐️" : "❌"}</div>
+      <div>
+        <h3>Name: {song.name}</h3>
+        <div>Artist: {song.artist}</div>
+        <div>Album: {song.album}</div>
+        <div>Time: {song.time}</div>
+        <div>Favorite: {song.is_favorite ? "⭐️" : "❌"}</div>
+      </div>
+      <div>
+        <button>
+          <Link to="/songs">Back</Link>
+        </button>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
     </section>
   );
 }
