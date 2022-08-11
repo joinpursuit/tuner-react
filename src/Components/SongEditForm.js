@@ -26,26 +26,32 @@ function SongEditForm() {
   }, [id]);
 
   const updateSong = (song) => {
+    console.log('in update', song);
     axios
       .put(`${API}/api/songs/${id}`, song)
-      .then((response) => {
-        setSong(response.data);
+      .then(() => {
+        // setSong(response.data);
         navigate(`/songs/${id}`);
       })
       .catch((c) => console.warn('catch', c));
   };
 
   const handleTextChange = (event) => {
+    console.log(event.target.value);
     setSong({ ...song, [event.target.id]: event.target.value });
   };
 
-  const handleCheckboxChange = () => {
-    setSong({ ...song, is_favorite: !song.is_favorite });
+  const handleCheckboxChange = (event) => {
+    console.log(song.is_favorite);
+    const favorite = event.target.checked ? true : false;
+    setSong({ ...song, is_favorite: favorite });
   };
 
   const handleSubmit = (event) => {
+    console.log('in edit', song);
     event.preventDefault();
     updateSong(song);
+    setSong('');
   };
 
   return (
@@ -57,7 +63,6 @@ function SongEditForm() {
           value={song.name}
           type='text'
           onChange={handleTextChange}
-          placeholder='Song Name'
           required
         />
 
@@ -65,20 +70,19 @@ function SongEditForm() {
         <input
           id='artist'
           type='text'
-          required
           value={song.artist}
-          placeholder='Artist Name'
           onChange={handleTextChange}
+          required
         />
 
         <label htmlFor='album'>Album Name:</label>
         <input
           id='album'
           type='text'
-          name='album'
+          // name='album'
           value={song.album}
-          placeholder=' album name ...'
           onChange={handleTextChange}
+          required
         />
 
         <label htmlFor='time'>Total Song Time:</label>
@@ -87,6 +91,7 @@ function SongEditForm() {
           type='number'
           value={song.time}
           onChange={handleTextChange}
+          required
         />
 
         <label htmlFor='is_favorite'>Is it a favorite?:</label>

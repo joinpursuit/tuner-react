@@ -11,13 +11,11 @@ const SongDetails = () => {
   let { id } = useParams();
 
   useEffect(() => {
-   
     axios
       .get(`${API}/api/songs/${id}`)
-      .then((response) => 
-      setSong(response.data.payload))
-      // .catch(() => navigate('/not-found'));
-      .catch((error) => console.error("catch", error));
+      .then((response) => setSong(response.data.payload))
+      .catch(() => navigate('/not-found'));
+    // .catch((error) => console.error("catch", error));
   }, [id, navigate]);
 
   const handleDelete = () => {
@@ -29,20 +27,20 @@ const SongDetails = () => {
       .catch((e) => console.error(e));
   };
 
-  
   return (
-    // <article>
-     <div className='Song-Details' >
-      <div style={{backgroundColor:'#00beb2',padding:'2rem'}}>
-      <h3>{song.is_favorite ? (
-          <span>&#11088;</span>
-        ) : (
-          <span className="X"> &#10060;</span>
-        )}{song.name}- By {song.artist}
-      </h3>
-      <h5>{song.album}</h5>
-      <h6>Time:{song.time}</h6>
-    
+    <article>
+      {/* <div className='Song-Details' > */}
+      <div style={{ backgroundColor: '#00beb2', padding: '2rem' }}>
+        <h3>
+          {song.is_favorite ? (
+            <span>&#11088;</span>
+          ) : (
+            <span className='X'> &#10060;</span>
+          )}
+          {song.name}- By {song.artist}
+        </h3>
+        <h5>{song.album}</h5>
+        <h6>Time:{(song.time / 60).toFixed(2).replace('.', ':')}</h6>
       </div>
       <div className='showNavigation'>
         <div>
@@ -53,7 +51,8 @@ const SongDetails = () => {
         </div>
         <div>
           {' '}
-          <Link to={`/songs/${song.id}/edit`}>
+          <Link to={`/songs/${id}/edit`}>
+            {/* //edited song.id to id */}
             <button>Edit</button>
           </Link>
         </div>
@@ -64,8 +63,8 @@ const SongDetails = () => {
           </Link>
         </div>
       </div>
-      </div>
-    // {/* </article> */}
+      {/* </div> */}
+    </article>
   );
 };
 

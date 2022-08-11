@@ -20,9 +20,9 @@ const Songs = () => {
   return (
     <section>
       {/* <div> */}
-      <button>
+      {/* <button>
         <a href='/songs/new'>New Song</a>
-      </button>
+      </button> */}
       <Table stripped='true' bordered hover responsive='sm'>
         <thead>
           <tr style={{ textAlign: 'center' }}>
@@ -72,7 +72,7 @@ const Songs = () => {
                     {song.album}
                   </Link>
                 </td>
-                <td>{song.time}</td>
+                <td>{(song.time / 60).toFixed(2).replace('.', ':')}</td>
               </tr>
             );
           })}
