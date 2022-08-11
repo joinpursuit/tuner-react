@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
+
 import Homepage from "./components/Homepage/Homepage";
 import NavBar from "./components/NavBar/NavBar";
+import FourOFour from "./components/404";
 import Index from "./pages/Index";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
@@ -26,7 +28,7 @@ function App() {
               <Route path="/songs/:id" element={<Show />} />
               <Route path="/songs/:id/edit" element={<Edit />} />
             </Route>
-            <Route path="*" element={<div>Song Not Found</div>} />
+            <Route path="*" element={<FourOFour />} />
           </Routes>
         </section>
       </main>

@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import ConfirmDelete from "../Index/ConfirmDelete";
 import "./ShowSong.scss";
 
-const ShowSong = (songID) => {
+const ShowSong = () => {
   const API = process.env.REACT_APP_API_URL;
 
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const ShowSong = (songID) => {
   const { id } = useParams();
 
   const [song, setSong] = useState({});
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     axios
@@ -40,6 +42,7 @@ const ShowSong = (songID) => {
         <p>Song time: {(song.time / 60).toFixed(2).replace(".", ":")}</p>
         <p>Favorite: {song.is_favorite ? "🌟" : null}</p>
       </section>
+
       <Button
         variant="outline-secondary"
         onClick={() => {
@@ -54,11 +57,17 @@ const ShowSong = (songID) => {
       <Button
         variant="outline-danger"
         onClick={() => {
-          deleteSong();
+          setShow(true);
         }}
       >
         DELETE
       </Button>
+      <ConfirmDelete
+        show={show}
+        handleClose={() => setShow(false)}
+        songID={id}
+        deleteSong={deleteSong}
+      />
     </section>
   );
 };

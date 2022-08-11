@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ConfirmDelete from "./ConfirmDelete";
 import "./Songs.scss";
 
 const Songs = () => {
   const API = process.env.REACT_APP_API_URL;
 
   const [songs, setSongs] = useState([]);
+  const [songID, setSongID] = useState({});
+  const [show, setShow] = useState(null);
 
   useEffect(() => {
     axios.get(`${API}/songs`).then((res) => {
@@ -35,26 +38,42 @@ const Songs = () => {
             <Button
               variant="outline-danger"
               onClick={() => {
-                deleteSong(song.id);
+                handleShow(song.id);
               }}
             >
               DELETE
             </Button>
           </td>
+          <ConfirmDelete
+            show={show}
+            handleClose={handleClose}
+            songID={songID}
+            deleteSong={deleteSong}
+          />
         </tr>
       );
     });
   };
 
-  const deleteSong = (songID) => {
-    axios.delete(`${API}/songs/${songID}`).then(() => {
+  const handleShow = (songId) => {
+    setSongID(songId);
+    setShow(true);
+  };
+
+  const handleClose = () => {
+    setShow(false);
+  };
+
+  const deleteSong = async (songID) => {
+    await axios.delete(`${API}/songs/${songID}`).then(() => {
       setSongs(songs.filter((song) => song.id !== songID));
     });
+
+    handleClose();
   };
 
   return (
     <section className="indexSection">
-      {/* {console.log(songs)} */}
       <header className="SectionHeader">
         <h1>Index</h1>
         <Link to="/songs/new">
