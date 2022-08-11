@@ -1,0 +1,18 @@
+nav {
+    background-color: blanchedalmond;
+    height: 80px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.indexPage{
+    font-size: 32px;
+    margin-top: 0px;
+}
+
+.indexPage:hover{
+    color:aliceblue;
+}
