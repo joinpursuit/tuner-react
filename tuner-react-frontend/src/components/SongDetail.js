@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import "./SongDetail.css";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -29,7 +30,7 @@ function SongDetail() {
   };
 
   return (
-    <section className="Song-Details">
+    <section className="songDetails">
       <div>
         <h3>Name: {song.name}</h3>
         <div>Artist: {song.artist}</div>

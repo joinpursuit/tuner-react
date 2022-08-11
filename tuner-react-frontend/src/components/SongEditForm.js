@@ -52,7 +52,7 @@ function SongEditForm() {
   };
 
   return (
-    <section>
+    <section className="form">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name: </label>

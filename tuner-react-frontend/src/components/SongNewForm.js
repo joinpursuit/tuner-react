@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./SongNewForm.css";
 
 //API url
 const API = process.env.REACT_APP_API_URL;
@@ -41,7 +42,7 @@ function SongNewForm() {
   };
 
   return (
-    <section>
+    <section className="form">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name: </label>

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Song from "./Song";
 import { Link } from "react-router-dom";
+import "./Songs.css";
 
 //get the API url
 const API = process.env.REACT_APP_API_URL;
@@ -20,16 +21,16 @@ function Songs() {
 
   return (
     <section>
-      <button>
-        <a href="/songs/new">New Song</a>
+      <button className="newSongButton">
+        <Link to="/songs/new">New Song</Link>
       </button>
-      <table>
+      <table className="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Artist</th>
-            <th>Time</th>
-            <th>Fav</th>
+            <th scope="col">Name</th>
+            <th scope="col">Artist</th>
+            <th scope="col">Time</th>
+            <th scope="col">Fav</th>
           </tr>
         </thead>
         <tbody>
