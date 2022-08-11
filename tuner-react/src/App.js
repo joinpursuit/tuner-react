@@ -3,6 +3,7 @@ import Home from './Pages/Home';
 import Navbar from './Components/Navbar';
 import Index from './Pages/Index';
 import Show from './Pages/Show';
+import New from './Pages/New';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/songs" element={<Index />} />
-        {/* <Route path="/songs/new" element={<New />} /> */}
+        <Route path="/songs/new" element={<New />} />
         <Route path="/songs/:index" element={<Show />} />
         {/* <Route path="/songs/:index/edit" element={<Edit />} /> */}
       </Routes>
