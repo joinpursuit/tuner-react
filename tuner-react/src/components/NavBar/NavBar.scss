@@ -1,0 +1,13 @@
+.navbar {
+  grid-column: 1;
+  height: 85%;
+
+  .navbarLinks {
+    margin: 0 auto;
+    height: 100%;
+
+    .tunerLink {
+      margin-bottom: 5%;
+    }
+  }
+}
