@@ -19,7 +19,7 @@ const Songs = () => {
 	return (
 		<div className='songs'>
 			<section>
-				<h1>Songs List</h1>
+				<h1>Songs</h1>
 				<hr />
 				<ul>
 					<li>Name{songs.title}</li>

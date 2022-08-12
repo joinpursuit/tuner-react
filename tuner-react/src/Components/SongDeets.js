@@ -39,7 +39,7 @@ const SongDeets = () => {
 			<h3>Artist: {song.artist}</h3>
 			<h3>Album: {song.album}</h3>
 			<h3>Time: {song.time}</h3>
-			<h3>Favorite: {song.is_favorite ? '✅' : '❌'}</h3>
+			<h3>Favorite: {song.is_favorite ? '🥰' : '🤬'}</h3>
 
 			<div>
 				<div>
