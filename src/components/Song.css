@@ -1,0 +1,12 @@
+.favorite {
+  text-align: center;
+}
+
+.title a {
+  font-weight: bold;
+  color: black;
+}
+
+.title a:hover {
+  color: #777;
+}
