@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { Form, Button } from 'react-bootstrap';
 const API = process.env.REACT_APP_API_URL;
 
 const SongNewForm = () => {
@@ -35,7 +35,7 @@ const SongNewForm = () => {
   };
 
   const handleCheckboxChange = (event) => {
-    const favorite=event.target.checked ?true:false
+    const favorite = event.target.checked ? true : false;
     setSong({ ...song, is_favorite: favorite });
     // setSong({ ...song, is_favorite: !song.is_favorite });
   };
@@ -48,22 +48,23 @@ const SongNewForm = () => {
 
   return (
     <div className='NewSong'>
-      <form className='NewSongForm' onSubmit={handleSubmit}>
+      <Form className='NewSongForm' onSubmit={handleSubmit}>
         <h1 className='NewSongHeader'>Add a New Song</h1>
-        <div>
-          <label htmlFor='name'>Song Name</label>
-          <input
+        <Form.Group>
+          <Form.Label>Song Name</Form.Label>
+          <Form.Control
             id='name'
             value={song.name}
+            name='name'
             type='text'
             onChange={handleTextChange}
             placeholder='Name'
             required
           />
-        </div>
-        <div>
-          <label htmlFor='artist'>Artist</label>
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Artist</Form.Label>
+          <Form.Control
             id='artist'
             type='text'
             value={song.artist}
@@ -71,10 +72,10 @@ const SongNewForm = () => {
             onChange={handleTextChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor='album'>Album</label>
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Album</Form.Label>
+          <Form.Control
             id='album'
             type='text'
             name='album'
@@ -83,10 +84,10 @@ const SongNewForm = () => {
             onChange={handleTextChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor='time'>Time</label>
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Time</Form.Label>
+          <Form.Control
             id='time'
             type='text'
             name='time'
@@ -95,20 +96,22 @@ const SongNewForm = () => {
             onChange={handleTextChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor='is_favorite'>Favorite</label>
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Favorite</Form.Label>
+          <Form.Check
             id='is_favorite'
             type='checkbox'
             onChange={handleCheckboxChange}
             checked={song.is_favorite}
             value={song.is_favorite}
           />
-        </div>
+        </Form.Group>
         <br />
-        <input type='submit' />
-      </form>
+        <Button vaariant='outline-success' type='submit'>
+          Submit
+        </Button>
+      </Form>
     </div>
   );
 };

@@ -1,22 +1,27 @@
-body {
+/* body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 nav {
-  background: #44c499;
+  margin: 0;
+  padding: 0;
+  background-color:rgba(110, 198, 199);
+  width: 70%;
   display: block;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1em;
+  padding: 1rem 0; 
   box-shadow: 2px 2px 4px grey;
   margin-bottom: 1em;
-}
+} */
 
-main {
+/* main {
   width: 90%;
   margin: auto;
-}
+} */
+
 
 a {
   text-decoration: none;

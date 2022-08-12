@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap';
 const API = process.env.REACT_APP_API_URL;
 
 function SongEditForm() {
@@ -56,58 +57,73 @@ function SongEditForm() {
 
   return (
     <div className='Edit'>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='Name'>Song Name</label>
-        <input
-          id='name'
-          value={song.name}
-          type='text'
-          onChange={handleTextChange}
-          required
-        />
-
-        <label htmlFor='artist'>Artist:</label>
-        <input
-          id='artist'
-          type='text'
-          value={song.artist}
-          onChange={handleTextChange}
-          required
-        />
-
-        <label htmlFor='album'>Album Name:</label>
-        <input
-          id='album'
-          type='text'
-          // name='album'
-          value={song.album}
-          onChange={handleTextChange}
-          required
-        />
-
-        <label htmlFor='time'>Total Song Time:</label>
-        <input
-          id='time'
-          type='number'
-          value={song.time}
-          onChange={handleTextChange}
-          required
-        />
-
-        <label htmlFor='is_favorite'>Is it a favorite?:</label>
-        <input
-          id='is_favorite'
-          type='checkbox'
-          checked={song.is_favorite}
-          onChange={handleCheckboxChange}
-        />
+      <Form onSubmit={handleSubmit}>
+        <Form.Group>
+          <Form.Label>Song Name</Form.Label>
+          <Form.Control
+            id='name'
+            value={song.name}
+            type='text'
+            name='name'
+            onChange={handleTextChange}
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Artist: </Form.Label>
+          <Form.Control
+            id='artist'
+            type='text'
+            name='artist'
+            value={song.artist}
+            onChange={handleTextChange}
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Album Name:</Form.Label>
+          <Form.Control
+            id='album'
+            type='text'
+            name='album'
+            value={song.album}
+            onChange={handleTextChange}
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Song Time:</Form.Label>
+          <Form.Control
+            id='time'
+            type='number'
+            name='time'
+            value={song.time}
+            onChange={handleTextChange}
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Is_Favorite</Form.Label>
+          <Form.Check
+            id='is_favorite'
+            type='checkbox'
+            checked={song.is_favorite}
+            onChange={handleCheckboxChange}
+            value={song.is_favorite}
+          />
+        </Form.Group>
 
         <br />
-        <input type='submit' />
-      </form>
-
+        <Button
+          style={{ textAlign: 'center' }}
+          variant='outline-success'
+          type='submit'
+        >
+          Submit
+        </Button>
+      </Form>
       <Link to={`/songs/${id}`}>
-        <button>Back</button>
+        <Button variant='outline-success'>Back</Button>
       </Link>
     </div>
   );
