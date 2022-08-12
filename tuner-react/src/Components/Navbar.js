@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
-import Home from '../Pages/Home';
-import Index from '../Pages/Index';
+
 
 function Navbar() {
   return (
     <div>
-      <Link to="/" element={<Home />}>
+      <Link to="/" >
         Go Home
       </Link>
       <br />
-      <Link to="/songs" element={<Index />}>
+      <Link to="/songs" >
         See Songs
       </Link>
       <br />

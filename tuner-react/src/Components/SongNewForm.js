@@ -88,7 +88,7 @@ function SongNewForm() {
         </div>
         <br />
         <div>
-          <label htmlFor="is_favorite">Is_Favorite: </label>
+          <label htmlFor="is_favorite">Favorite: </label>
           <input
             id="is_favorite"
             value={song.is_favorite}

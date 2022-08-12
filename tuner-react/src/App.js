@@ -4,6 +4,9 @@ import Navbar from './Components/Navbar';
 import Index from './Pages/Index';
 import Show from './Pages/Show';
 import New from './Pages/New';
+import FourOFour from './Pages/FourOFour';
+import Edit from './Pages/Edit';
+
 
 function App() {
   return (
@@ -13,8 +16,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/songs" element={<Index />} />
         <Route path="/songs/new" element={<New />} />
-        <Route path="/songs/:index" element={<Show />} />
-        {/* <Route path="/songs/:index/edit" element={<Edit />} /> */}
+        <Route path="/songs/:id" element={<Show />} />
+        <Route path="/songs/:id/edit" element={<Edit />} />
+        <Route path="*" element={<FourOFour />} />
       </Routes>
     </div>
   );

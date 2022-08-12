@@ -33,7 +33,7 @@ function SongEditForm() {
         setSong(response.data.payload);
       })
       .catch((e) => console.error(e));
-  }, []);
+  }, [id]);
 
   const handleTextChange = (event) => {
     setSong({ ...song, [event.target.id]: event.target.value });
