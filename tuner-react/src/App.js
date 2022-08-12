@@ -7,6 +7,7 @@ import New from './Pages/New';
 import FourOFour from './Pages/FourOFour';
 import Edit from './Pages/Edit';
 
+import './App.css'
 
 function App() {
   return (

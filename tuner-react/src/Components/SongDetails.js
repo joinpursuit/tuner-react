@@ -35,16 +35,16 @@ function SongDetails() {
 
   return (
     <article>
-      <h2>Name: {song.name}</h2>
-      <h2>Artist: {song.artist}</h2>
-      <h2>Album: {song.album}</h2>
-      <h2>Time in seconds: {song.time}</h2>
-      <h2>Favorite: {song.is_favorite ? '⭐' : '❌'}</h2>
+      <h3>Name: {song.name}</h3>
+      <h3>Artist: {song.artist}</h3>
+      <h3>Album: {song.album}</h3>
+      <h3>Time in seconds: {song.time}</h3>
+      <h3>Favorite: {song.is_favorite ? '⭐' : '❌'}</h3>
 
       <div className="showNavigation">
         <div>
           <Link to={`/songs`}>
-            <button>Back to songs list</button>
+            <button>Back to Songs</button>
           </Link>
         </div>
         <div>

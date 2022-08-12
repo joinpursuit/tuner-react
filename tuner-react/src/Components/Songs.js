@@ -48,7 +48,7 @@ function Songs() {
       </section>
       <br />
       <button>
-        <Link to={"/"}>Back</Link>
+        <Link to={'/'}>Back</Link>
       </button>
     </div>
   );

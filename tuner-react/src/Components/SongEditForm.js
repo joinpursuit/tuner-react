@@ -30,7 +30,7 @@ function SongEditForm() {
     axios
       .get(`${API}/songs/${id}`)
       .then((response) => {
-        setSong(response.data.payload);
+        setSong(response.data);
       })
       .catch((e) => console.error(e));
   }, [id]);
