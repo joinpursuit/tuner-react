@@ -17,17 +17,18 @@ const Songs = () => {
 	}, [songs]);
 
 	return (
-		<div className='Songs'>
+		<div className='songs'>
 			<section>
 				<h1>Songs List</h1>
 				<hr />
 				<ul>
-					<li>Name</li>
-					<li>Album</li>
-					<li>Favorite</li>
+					<li>Name{songs.title}</li>
+					<li>Album{songs.album}</li>
+					<li>Favorite{songs.is_favorite}</li>
+					<li>Time{songs.time}</li>
 				</ul>
 				{songs.map((song) => {
-					return <Song key={song.id} song={song} />;
+					return <Songs key={song.id} song={song} />;
 				})}
 			</section>
 			<br />
