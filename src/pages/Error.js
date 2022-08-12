@@ -1,6 +1,13 @@
+import { HelmetProvider, Helmet } from "react-helmet-async";
+
 function Error() {
   return (
     <div>
+      <HelmetProvider>
+        <Helmet>
+          <title>Tunatic | Not Found</title>
+        </Helmet>
+      </HelmetProvider>
       <h1>404: Not Found</h1>
       <p className="error-text">
         The page you are looking for might have been removed, had its named
