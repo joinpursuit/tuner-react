@@ -13,7 +13,7 @@ function Song({ song, id }) {
       <tr id='songTR'>
         <td>
           <Link to={`/songs/${id}`} id='favTD'>
-            {song.is_favorite}
+            {song.is_favorite ? 'U+2B50' : ''}
           </Link>
         </td>
         <td>

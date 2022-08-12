@@ -6,15 +6,15 @@ import { useParams } from 'react-router-dom';
 const API = process.env.REACT_APP_API_URL;
 
 function SongGallery() {
-  const [song, setSong] = useState([]);
+  const [songs, setSongs] = useState([]);
   let { id } = useParams();
   useEffect(() => {
     axios
       .get(`${API}/songs/`)
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.payload);
 
-        setSong(response.data);
+        setSongs(response.data.payload);
       })
       .catch((error) => {
         console.warn(error);
@@ -28,8 +28,8 @@ function SongGallery() {
 
         <table>
           <tbody>
-            {song.map((so, id) => {
-              return <Song key={so.id} song={so} index={id} />;
+            {songs.map((song, id) => {
+              return <Song key={song.id} song={song} index={id} />;
             })}
           </tbody>
         </table>
