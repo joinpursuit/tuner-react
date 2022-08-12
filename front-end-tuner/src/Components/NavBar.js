@@ -23,6 +23,9 @@ function NavBar() {
             <Nav.Link href="/songs/new" style={{ color: "white" }}>
               New Song
             </Nav.Link>
+            <Nav.Link href="/playlists" style={{ color: "white" }}>
+              Playlists
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

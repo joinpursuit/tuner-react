@@ -6,6 +6,8 @@ import NewSong from "./Components/NewSong";
 import OneSong from "./Components/OneSong";
 import NavBar from "./Components/NavBar";
 import EditSong from "./Components/EditSong";
+import Playlists from "./Components/Playlists";
+import Playlist from "./Components/Playlist";
 
 //Pages
 import Home from "./Pages/Home";
@@ -21,7 +23,9 @@ function App() {
           <Route path="/songs" element={<Index />} />
           <Route path="/songs/:id" element={<OneSong />} />
           <Route path="/songs/new" element={<NewSong />} />
-          <Route path="/songs/edit/:id" element={<EditSong />} />
+          <Route path="/songs/:id/edit" element={<EditSong />} />
+          <Route path="/playlists" element={<Playlists />} />
+          <Route path="/playlists/:id" element={<Playlist />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>

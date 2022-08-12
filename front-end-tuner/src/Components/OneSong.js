@@ -29,7 +29,7 @@ function OneSong() {
   };
 
   const routeEdit = () => {
-    navigate(`/songs/edit/${id}`);
+    navigate(`/songs/${id}/edit/`);
   };
   return (
     <Card style={{ width: "25rem" }} className="m-auto mt-5">
