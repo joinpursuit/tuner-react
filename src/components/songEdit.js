@@ -20,7 +20,7 @@ function SongEdit() {
     setSong({ ...song, [event.target.id]: event.target.value });
   };
 
-  const handleCheckboxChange = () => {
+  const handleCheckboxChange = (event) => {
     setSong({ ...song, is_favorite: !song.is_favorite });
   };
 

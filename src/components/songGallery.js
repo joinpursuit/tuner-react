@@ -19,7 +19,7 @@ function SongGallery() {
       .catch((error) => {
         console.warn(error);
       });
-  }, [id, API]);
+  }, [API, id]);
 
   return (
     <div className='songsGallery'>
@@ -28,8 +28,8 @@ function SongGallery() {
 
         <table>
           <tbody>
-            {song.map((song, id) => {
-              return <Song key={song.id} song={song} index={id} />;
+            {song.map((so, id) => {
+              return <Song key={so.id} song={so} index={id} />;
             })}
           </tbody>
         </table>

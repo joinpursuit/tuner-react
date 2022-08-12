@@ -15,22 +15,22 @@ function SongNew() {
   const handleSongEdit = (event) => {
     setSong({ ...song, [event.target.id]: event.target.value });
   };
-  const handleCheckboxChange = () => {
+  const handleCheckboxChange = (event) => {
     setSong({ ...song, is_favorite: !song.is_favorite });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`${API}/songs/${id}`, song)
+      .post(`${API}/songs`, song)
       .then(() => {
-        navigate(`songs/${id}`);
+        navigate(`/songs`);
       })
       .catch((error) => {
         console.log(error);
       });
   };
   return (
-    <div className='SongEdit'>
+    <div className='NewSong'>
       <form onSubmit={handleSubmit}>
         <label htmlFor='name'>Name:</label>
         <input

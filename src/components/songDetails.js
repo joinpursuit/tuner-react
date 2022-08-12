@@ -56,6 +56,9 @@ function SongDetails() {
       <Link to={`/songs/${id}/edit`}>
         <button>Edit</button>
       </Link>
+      <Link to={'/songs'}>
+        <button className='back'>Back</button>
+      </Link>
     </article>
   );
 }
