@@ -42,12 +42,11 @@ function App() {
               width: '15rem',
               padding: ' 1rem',
               textAlign: 'center',
-              fontSize: '1.2rem',
+              fontSize: '1.5rem',
             }}
           >
-            A PERN Stack Music app which allows users to add,edit,view and
-            delete playlist using react bootstrap with Holy Grail Layout
-            style,scrollable table and transitions.
+            A PERN Stack Music app which allows users to add, edit, view and deleter playlist using react bootstrap with Holy Grail Layout
+            style,scrollable table and transitions
           </p>
         </aside>
       </main>

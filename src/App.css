@@ -9,7 +9,6 @@ body {
 }
 
 .flex-header {
-
   background-color: rgba(110, 198, 199);
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -33,7 +32,6 @@ body {
   background-color: #bde9d9;
   flex: 3 3;
   padding-top: 3rem;
-  
 }
 
 .flex-aside {
@@ -50,7 +48,6 @@ body {
   width: 100%;
   bottom: 0;
 }
-
 
 @media all and (max-width: 540px) {
   .flex-main {

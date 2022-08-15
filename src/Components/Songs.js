@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import Pagination from './Pagination';
+import Pagination from './Pagination';
 // import _ from 'lodash';
 import Table from 'react-bootstrap/Table';
 const API = process.env.REACT_APP_API_URL;
@@ -9,64 +9,63 @@ const API = process.env.REACT_APP_API_URL;
 
 const Songs = () => {
   const [songs, setSongs] = useState([]);
-  const [fave,setFave]=useState(false);
+  const [fave, setFave] = useState(false);
   // const [paginatedSongs, setPaginatedSongs] = useState();
-  // const [currentPage,setCurrentPage]=useState(1)
-  // const [songsPerPage] = useState(5);
-
- 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [songsPerPage] = useState(4);
 
   useEffect(() => {
     axios
       .get(`${API}/api/songs`)
       .then((res) => {
         setSongs(res.data.payload);
-        // setPaginatedSongs(_(res.data.payload).slice(0).take(pageSize).value())
+        console.log(songs);
+        
       })
       .catch((e) => console.error('catch', e));
   }, []);
 
-
-  // const pageCount=songs? Math.ceil(songs.length/pageSize):0;
-  // if(pageCount===1) return null;
-  // const pages = _.range(1, pageCount+1);
- // Get current posts
-  // const indexOfLastPost = currentPage * songsPerPage;
-  // const indexOfFirstPost = indexOfLastPost - songsPerPage;
-  // const currentSongs = songs.slice(indexOfFirstPost, indexOfLastPost);
+ 
+  // Get current posts
+  const indexOfLastSong = currentPage * songsPerPage;
+  console.log(indexOfLastSong);
+  const indexOfFirstSong = indexOfLastSong - songsPerPage;
+  console.log(indexOfFirstSong);
+  const currentSongs = songs.slice(indexOfFirstSong, indexOfLastSong);
+  console.log(currentSongs);
 
   // // Change page
-  // const paginate = pageNumber => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const nextPage = () => setCurrentPage( currentPage + 1 );
 
-  
+  const prevPage = () => setCurrentPage( currentPage - 1 );
+
   return (
-    <section style={{overflowY:'auto', 
-    overflowX:'auto',height:'300px'}}>
-      <Table 
-      stripped='true' bordered hover 
-      responsive='sm'>
-        <thead style={{position:'sticky',
-        top: '0'}}>
-          <tr style={{ textAlign: 'center' }}>
-            <th style={{position:'sticky',
-        top: '0'}}>Favorite</th>
-            <th style={{position:'sticky',
-        top: '0'}}>Song</th>
-            <th style={{position:'sticky',
-        top: '0'}}>Artist</th>
-            <th style={{position:'sticky',
-        top: '0'}}>Album</th>
-            <th style={{position:'sticky',
-        top: '0'}}>Time</th>
+    <div>
+    <section >
+    
+      <Table
+        className='table-container'
+        stripped='true'
+        bordered
+        hover
+        responsive='sm'
+      >
+        <thead>
+          <tr className='green'>
+            <th>Favorite</th>
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Time</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           {console.log(songs)}
-          {songs.map((song) => {
+          {currentSongs.map((song) => {
             return (
               <tr className='Song Songs' key={song.id}>
                 <td>
-               
                   {song.is_favorite ? (
                     <span>&#11088;</span>
                   ) : (
@@ -74,8 +73,7 @@ const Songs = () => {
                       &#10060;
                       {/* &nbsp; &nbsp; &nbsp; */}
                     </span>
-                  )} 
-             
+                  )}
                 </td>
                 <td>
                   <Link
@@ -106,22 +104,18 @@ const Songs = () => {
             );
           })}
         </tbody>
-       
       </Table>
-      {/* <nav className='d-flex justify-content-center'>
-        <ul className='pagination'>
-          {pages.map((page)=>(
-            <li className='(page===currentPage?')'>{page}</li>
-          ))
-        }     
-        </ul>
-      </nav> */}
-      {/* <Pagination
-        postsPerPage={songsPerPage}
-        totalPosts={songs.length}
-        paginate={paginate}
-      /> */}
-    </section>
+   
+     
+      <Pagination
+        songsPerPage={songsPerPage}
+        totalSongs={songs.length}
+        paginate={paginate} 
+        nextPage={nextPage} 
+        prevPage={prevPage}
+      />
+     </section>
+     </div>
   );
 };
 
