@@ -1,0 +1,108 @@
+/* body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ }
+nav {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(110, 198, 199);
+  width: 100%;
+  display: block;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: 2px 2px 4px grey;
+  margin-bottom: 1em;
+}
+
+/* main {
+  width: 100%;
+  margin: auto;
+  height:100%;
+} */
+
+a {
+  text-decoration: none;
+  color: #4442a5;
+}
+
+h4 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+tr.green th {
+  background: green;
+  color: white;
+}
+/* table {
+  width: 50%;
+  margin: auto;
+  
+} */
+.table-container {
+  overflow: auto;
+  max-height: 160px;
+  border: 1px solid red;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: white;
+}
+td {
+  text-align: center;
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+tbody tr:nth-child(even) {
+  background: #00beb2;
+}
+tbody tr:nth-child(odd) {
+  background: #54cda4;
+}
+
+.New form {
+  margin: auto;
+  width: 95%;
+}
+
+input[type],
+textarea {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+input[type='checkbox'] {
+  margin: 0;
+  width: 15%;
+}
+
+input[type='submit'] {
+  width: 30%;
+}
+
+.showNavigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.tunerBox {
+  padding: 4rem 0;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.Song-Details {
+  text-align: center;
+  margin: 5rem 0;
+}
