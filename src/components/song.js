@@ -12,17 +12,17 @@ function Song({ song, id }) {
       </thread>
       <tr id='songTR'>
         <td>
-          <Link to={`/songs/${id}`} id='favTD'>
-            {song.is_favorite ? 'U+2B50' : ''}
+          <Link to={`/songs/${song.id}`} id='favTD'>
+            {song.is_favorite ? `🌟` : null}
           </Link>
         </td>
         <td>
-          <Link to={`/songs/${id}`} id='nameTD'>
+          <Link to={`/songs/${song.id}`} id='nameTD'>
             {song.name}
           </Link>
         </td>
         <td>
-          <Link to={`/songs/${id}`} h2 id='artistTD'>
+          <Link to={`/songs/${song.id}`} h2 id='artistTD'>
             {song.artist}
           </Link>
         </td>

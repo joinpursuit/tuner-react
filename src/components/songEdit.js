@@ -39,7 +39,7 @@ function SongEdit() {
     axios
       .put(`${API}/songs/${id}`, song)
       .then(() => {
-        navigate(`songs/${id}`);
+        navigate(`/songs/${id}`);
       })
       .catch((error) => {
         console.log(error);

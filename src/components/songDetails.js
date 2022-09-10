@@ -12,7 +12,8 @@ function SongDetails() {
     axios
       .get(`${API}/songs/${id}`)
       .then((response) => {
-        setSong(response.data);
+        console.log(response.data.payload);
+        setSong(response.data.payload);
       })
       .catch((error) => {
         console.warn(error);
@@ -47,7 +48,7 @@ function SongDetails() {
               <h2>Time: {song.time}</h2>
             </td>
             <td>
-              <h2>Your Favorite?: {song.is_favorite}</h2>
+              <h2>Your Favorite?: {song.is_favorite ? `🌟` : null}</h2>
             </td>
           </tr>
         </tbody>

@@ -1,4 +1,5 @@
 import SongGallery from '../components/songGallery';
+import './Index.css';
 
 function Gallery() {
   return (

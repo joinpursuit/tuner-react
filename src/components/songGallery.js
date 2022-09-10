@@ -10,7 +10,7 @@ function SongGallery() {
   let { id } = useParams();
   useEffect(() => {
     axios
-      .get(`${API}/songs/`)
+      .get(`${API}/songs`)
       .then((response) => {
         console.log(response.data.payload);
 
